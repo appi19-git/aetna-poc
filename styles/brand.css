@@ -1,0 +1,129 @@
+/*
+ * Aetna State of Florida brand tokens
+ * Extracted from https://www.aetnastateflorida.com/ (migration-work/brand.json)
+ */
+
+:root {
+  /* colors */
+  --background-color: #fefefe;
+  --text-color: #0a0a0a;
+  --text-color-body: #454545;
+  --text-color-muted: #474747;
+  --text-color-subtle: #3f3f3f;
+  --accent-color: #7d3f98;
+  --accent-color-hover: #643279;
+  --accent-color-dark: #5d2f71;
+  --light-color: #f2f2f2;
+  --dark-color: #2a2a2a;
+  --cream-color: #f2f2f2;
+  --forest-color: #2a2a2a;
+  --border-color: #aeaeae;
+  --border-color-light: #cacaca;
+
+  /* fonts */
+  --body-font-family: 'Open Sans', open-sans-fallback, sans-serif;
+  --heading-font-family: 'Helvetica Neue', helvetica, roboto, arial, sans-serif;
+  --display-font-family: 'DomaineDisplayWeb-Bold', domaine-fallback, georgia, serif;
+
+  /* body sizes (mobile-first) */
+  --body-font-size-l: 16.5px;
+  --body-font-size-m: 15px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
+
+  /* heading sizes (mobile-first) */
+  --heading-font-size-xxl: 36px;
+  --heading-font-size-xl: 24px;
+  --heading-font-size-l: 22.5px;
+  --heading-font-size-m: 18px;
+  --heading-font-size-s: 16px;
+  --heading-font-size-xs: 14px;
+
+  /* spacing */
+  --section-padding: 30px 0 0;
+  --container-max-width: 1125px;
+  --container-narrow-max-width: 844px;
+  --container-padding: 0 15px;
+  --gap-xs: 12px;
+  --gap-sm: 8px;
+  --gap-md: 16px;
+  --gap-lg: 24px;
+  --gap-xl: 32px;
+  --gap-2xl: 48px;
+  --gap-3xl: 64px;
+
+  /* nav height (header is static and taller than this; reserves space before load) */
+  --nav-height: 148px;
+
+  /* buttons (source a.button.brand-button-purple) */
+  --button-font-family: 'Open Sans', open-sans-fallback, sans-serif;
+  --button-font-size: 13.5px;
+  --button-font-weight: 700;
+  --button-letter-spacing: normal;
+  --button-border-radius: 8.1px;
+  --button-padding: 13.5px 27px;
+  --button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  --btn-shadow: transparent;
+
+  /* links */
+  --link-color: #0a79a2;
+  --link-hover-color: #1468a0;
+
+  /* transitions */
+  --transition-fast: 0.25s;
+  --transition-normal: 0.3s ease;
+
+  /* border radii */
+  --border-radius-sm: 8px;
+  --card-border-radius: 8px;
+
+  /* card shared patterns */
+  --card-hover-shadow: 0 4px 20px rgb(0 0 0 / 8%);
+  --card-hover-transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+
+  /* tag pill shared patterns */
+  --tag-padding: 5px 8px 3px;
+  --tag-font-size: 10.4px;
+  --tag-letter-spacing: 0.52px;
+
+  /* text link */
+  --text-link-letter-spacing: normal;
+  --text-link-underline-offset: 3px;
+
+  /* brand */
+  --logo-icon-size: 32px;
+  --brand-letter-spacing: normal;
+
+  /* footer */
+  --footer-link-color: #0a79a2;
+
+  /* dark section / overlay text */
+  --text-on-dark: #fff;
+  --text-on-dark-muted: rgb(255 255 255 / 85%);
+
+  /* glass card (dark section) */
+  --glass-bg: rgb(255 255 255 / 6%);
+  --glass-border: rgb(255 255 255 / 12%);
+}
+
+/* size-adjusted serif stand-in for the proprietary DomaineDisplay face */
+@font-face {
+  font-family: domaine-fallback;
+  size-adjust: 85%;
+  src: local('Georgia Bold'), local('Georgia');
+}
+
+/* fallback font metrics for Open Sans */
+@font-face {
+  font-family: open-sans-fallback;
+  size-adjust: 105%;
+  src: local('Arial');
+}
+
+@media (width >= 900px) {
+  :root {
+    --heading-font-size-xxl: 75px;
+    --section-padding: 45px 0 0;
+    --nav-height: 121px;
+  }
+}

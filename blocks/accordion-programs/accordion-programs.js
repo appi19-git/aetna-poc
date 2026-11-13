@@ -16,7 +16,7 @@ async function loadBodyFragment(body) {
     const { loadFragment } = await import('../fragment/fragment.js');
     const fragment = await loadFragment(url.pathname);
     if (fragment) body.replaceChildren(...fragment.childNodes);
-  } catch (e) {
+  } catch {
     // fragment block unavailable — keep the authored link
   }
 }

@@ -1,21 +1,50 @@
-/* Accordion Programs — structural styles: thin dividers, "+" toggle, expandable body */
+/* Accordion Programs — source .pcaccordion--faq: purple "+" toggle, purple titles, thin dividers */
 
 .accordion-programs {
-  max-width: 100%;
+  border-radius: 4.41px;
+  color: var(--text-color);
 }
 
-.accordion-programs details.accordion-programs-item {
-  border-bottom: 1px solid var(--accordion-programs-divider, #dadada);
+.accordion-programs details.accordion-programs-item + details.accordion-programs-item {
+  border-top: 1px solid #d1d1d1;
 }
 
+/* row trigger (source button.pcaccordion-trigger) */
 .accordion-programs details.accordion-programs-item summary {
-  position: relative;
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 10px 8px;
+  align-items: center;
+  gap: 21.9px;
+  padding: 10.29px 7.35px;
+  font-family: var(--body-font-family);
+  font-size: 14.7px;
+  font-weight: 700;
+  line-height: 14.7px;
+  color: var(--accent-color);
   cursor: pointer;
   list-style: none;
+  transition: background-color 0.08s linear, color 0.08s linear;
+}
+
+/* hover (source button.pcaccordion-trigger:hover) */
+.accordion-programs details.accordion-programs-item summary:hover {
+  background-color: rgb(237 237 237);
+}
+
+/* open row (source [aria-expanded=true]): purple bar, white title and icon */
+.accordion-programs details.accordion-programs-item[open] > summary,
+.accordion-programs details.accordion-programs-item[open] > summary:hover {
+  border-radius: 4.41px 4.41px 0 0;
+  background-color: var(--accent-color, #7d3f98);
+  color: #fff;
+}
+
+.accordion-programs details.accordion-programs-item[open] > summary .accordion-programs-item-title,
+.accordion-programs details.accordion-programs-item[open] > summary .accordion-programs-item-icon {
+  color: #fff;
+}
+
+.accordion-programs details.accordion-programs-item:first-child summary {
+  border-radius: 4.41px 4.41px 0 0;
 }
 
 .accordion-programs details.accordion-programs-item summary::-webkit-details-marker {
@@ -23,51 +52,63 @@
 }
 
 .accordion-programs details.accordion-programs-item summary:focus-visible {
-  outline: 2px solid currentcolor;
+  outline: 2px solid var(--accent-color);
   outline-offset: 2px;
 }
 
+/* row title (source p.pcaccordion-title) */
 .accordion-programs .accordion-programs-item-title {
   flex: 1 1 auto;
   min-width: 0;
+  font-family: var(--body-font-family);
+  font-size: 14.7px;
+  font-weight: 400;
+  line-height: 17.64px;
+  color: var(--accent-color);
 }
 
-/* "+" toggle drawn with two bars; the vertical bar collapses when open */
-.accordion-programs .accordion-programs-item-icon {
+/* source Foundation/normalize sup: keeps "®" rows at the 38px row height */
+.accordion-programs .accordion-programs-item-title sup {
   position: relative;
-  flex: 0 0 auto;
-  width: 14px;
-  height: 14px;
-  margin-top: 0.3em;
+  top: -0.5em;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
 }
 
-.accordion-programs .accordion-programs-item-icon::before,
-.accordion-programs .accordion-programs-item-icon::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: currentcolor;
-  transform: translate(-50%, -50%);
+/* toggle (source span.pcaccordion-icon): 7.5px "+" text glyph, "−" rotated 180deg when open */
+.accordion-programs .accordion-programs-item-icon {
+  flex: 0 0 auto;
+  width: 7.5px;
+  height: 8px;
+  color: var(--accent-color);
+  font-family: var(--body-font-family);
+  font-size: 14.7px;
+  font-weight: 700;
+  line-height: 8px;
+  text-align: center;
+  transform: translateY(3px);
   transition: transform 0.2s;
 }
 
 .accordion-programs .accordion-programs-item-icon::before {
-  width: 14px;
-  height: 2px;
+  content: '+';
+  display: block;
 }
 
-.accordion-programs .accordion-programs-item-icon::after {
-  width: 2px;
-  height: 14px;
+.accordion-programs details[open] .accordion-programs-item-icon {
+  transform: translateY(3px) rotate(180deg);
 }
 
-.accordion-programs details[open] .accordion-programs-item-icon::after {
-  transform: translate(-50%, -50%) scaleY(0);
+.accordion-programs details[open] .accordion-programs-item-icon::before {
+  content: '\2212';
 }
 
+/* open panel (source dd.pcaccordion-panel): light grey, hairline border, 29.4px side padding */
 .accordion-programs .accordion-programs-item-body {
-  padding: 0 8px 16px 34px;
+  border: 1px solid rgb(0 0 0 / 10%);
+  padding: 0 29.4px;
+  background-color: rgb(245 245 245);
 }
 
 .accordion-programs .accordion-programs-item-body > :first-child {
@@ -75,11 +116,31 @@
 }
 
 .accordion-programs .accordion-programs-item-body > :last-child {
-  margin-bottom: 0;
+  margin-bottom: 15px;
+}
+
+/* panel links: regular weight (source .pcaccordion-panel a), over section link styles */
+main .section .accordion-programs .accordion-programs-item-body a:any-link:not(.button) {
+  font-weight: 400;
+}
+
+main .section .accordion-programs .accordion-programs-item-body strong a:any-link:not(.button) {
+  font-weight: inherit;
+}
+
+/* lead-ins stay at body size (the narrow section enlarges flyer-list titles only) */
+main .section .accordion-programs .accordion-programs-item-body p > strong:first-child {
+  font-size: inherit;
 }
 
 .accordion-programs .accordion-programs-item-body ul {
-  padding-left: 1.25em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.accordion-programs .accordion-programs-item-body li {
+  line-height: 1.6;
 }
 
 .accordion-programs .accordion-programs-item-body img {
@@ -87,25 +148,9 @@
   height: auto;
 }
 
-@media (width >= 600px) {
-  .accordion-programs details.accordion-programs-item summary {
-    padding: 10px 12px;
-  }
-
-  .accordion-programs .accordion-programs-item-body {
-    padding: 0 12px 20px 38px;
-  }
-}
-
-@media (width >= 900px) {
-  .accordion-programs {
-    max-width: 640px;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .accordion-programs .accordion-programs-item-icon::before,
-  .accordion-programs .accordion-programs-item-icon::after {
+  .accordion-programs .accordion-programs-item-icon,
+  .accordion-programs details.accordion-programs-item summary {
     transition: none;
   }
 }

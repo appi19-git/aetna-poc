@@ -248,3 +248,169 @@
     padding-left: var(--gap-2xl);
   }
 }
+
+/* ===== Contact panel: plain columns whose second column is the phone sidebar =====
+ * Source: contact-us.php .content-panel (text cell large-6 + .content-panel-phone large-3).
+ * Detected by structure (two cells, second cell holds "h3 + hr"), so it works with or
+ * without the JS cell classes and never touches the option classes above.
+ */
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div {
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div {
+  box-sizing: border-box;
+  flex: none;
+  padding: 0 9.375px;
+}
+
+/* thin grey rules between groups (source .utility-simple-rule) */
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) hr {
+  width: 100%;
+  height: 0;
+  margin: 1em auto;
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* --- text column --- */
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:first-child {
+  width: 100%;
+  color: var(--text-color);
+}
+
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:first-child h3 {
+  margin: 0 0 7.5px;
+  font-family: var(--body-font-family);
+  font-size: 22.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--accent-color);
+}
+
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:first-child p {
+  margin: 0 0 15px;
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* lead paragraph (source .content-panel-body__bold) */
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:first-child h3 + hr + p {
+  font-weight: 700;
+  color: #333;
+}
+
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:first-child ul {
+  margin: 0 0 15px 2em;
+  padding: 0;
+  list-style: disc;
+}
+
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:first-child li {
+  line-height: 1.6;
+}
+
+/* --- phone sidebar card (source .content-panel-phone) --- */
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:last-child {
+  width: 83.3333%;
+  margin-top: 2em;
+  padding: 1em 9.375px 2em;
+  border-top: 20px solid rgb(0 0 0 / 20%);
+  border-bottom: 10px solid rgb(0 0 0 / 20%);
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  box-shadow: 0 2px 10px -2px rgb(0 0 0 / 66%);
+  font-family: var(--body-font-family);
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-on-dark);
+  text-align: center;
+}
+
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:last-child p {
+  margin: 0;
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: inherit;
+}
+
+/* phone icon: 75px at 50% opacity */
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:last-child p:has(> picture, > img) {
+  font-size: inherit;
+  line-height: 0;
+}
+
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:last-child img {
+  display: block;
+  width: 75px;
+  height: auto;
+  margin: 1em auto 0.5em;
+  opacity: 0.5;
+}
+
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:last-child h3 {
+  margin: 0 0 7.5px;
+  font-family: inherit;
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1.4;
+  color: inherit;
+}
+
+/* "Call 1-877-858-6507" */
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:last-child p:has(> strong) {
+  font-size: 1.3em;
+}
+
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:last-child strong {
+  font-weight: inherit;
+}
+
+/* blank line between the TDD line and the hours */
+.columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:last-child p:has(> strong) + p {
+  margin-bottom: calc(1.5em / 1.1);
+}
+
+@media (width >= 600px) {
+  .columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 45px;
+  }
+
+  .columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div {
+    padding: 0 14.0625px;
+  }
+
+  .columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:first-child {
+    flex: 0 0 66.6667%;
+    width: auto;
+  }
+
+  .columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:last-child {
+    flex: 0 0 33.3333%;
+    width: auto;
+    margin-top: 0;
+    padding: 1em 14.0625px 2em;
+    font-size: var(--body-font-size-m);
+  }
+
+  .columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:last-child h3 {
+    font-size: 29.0625px;
+  }
+}
+
+@media (width >= 900px) {
+  .columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:first-child {
+    flex-basis: 50%;
+  }
+
+  .columns:not(.columns-about, .columns-promo, .columns-pullquote, .columns-divider):has(> div > div:nth-child(2):last-child > h3 + hr) > div > div:last-child {
+    flex-basis: 25%;
+  }
+}

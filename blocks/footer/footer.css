@@ -1,0 +1,142 @@
+/* Footer — mobile-first; four-column link row from 600px */
+
+footer {
+  margin-top: 60px;
+  background-color: #fff;
+}
+
+footer .footer {
+  font-family: 'Open Sans', 'open sans fallback', arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #474747;
+}
+
+footer .footer-inner {
+  box-sizing: border-box;
+  max-width: 1125px;
+  margin: 0 auto;
+  padding: 30px 0 0;
+}
+
+footer .footer-row {
+  padding: 0 10px;
+}
+
+footer .footer p,
+footer .footer ul {
+  margin: 0;
+}
+
+footer .footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+footer .footer li {
+  margin: 0;
+}
+
+footer .footer a:any-link {
+  color: #0a79a2;
+  text-decoration: none;
+}
+
+footer .footer a:hover,
+footer .footer a:focus-visible {
+  color: #064e69;
+  text-decoration: underline;
+}
+
+/* logo row, followed by a thin rule */
+footer .footer-row-1 a:any-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+footer .footer-row-1 img {
+  display: block;
+  width: 150px;
+  height: 30px;
+}
+
+footer .footer-row-1::after {
+  content: '';
+  display: block;
+  margin: 18.75px 0;
+  border-bottom: 1px solid #cacaca;
+}
+
+/* legal link columns + social icons (stacked on mobile) */
+footer .footer-links {
+  padding-bottom: 15px;
+}
+
+footer .footer-icons p {
+  display: flex;
+  gap: 6px;
+  padding: 5px 0;
+}
+
+footer .footer-icons a:any-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+footer .footer-icons a:hover {
+  opacity: 0.7;
+}
+
+footer .footer-icons img {
+  width: 38px;
+  height: 38px;
+}
+
+/* language assistance line */
+footer .footer-row-3 {
+  padding-top: 18px;
+}
+
+footer .footer-row-3 img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+/* copyright row, preceded by a thin rule */
+footer .footer-row-4::before {
+  content: '';
+  display: block;
+  margin: 15px 0 18.75px;
+  border-bottom: 1px solid #cacaca;
+}
+
+footer .footer-row-4 p {
+  padding-bottom: 18px;
+}
+
+@media (width >= 600px) {
+  footer .footer-row {
+    padding: 0 15px;
+  }
+
+  footer .footer-row-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 30px;
+  }
+
+  footer .footer-links {
+    padding-bottom: 0;
+  }
+
+  footer .footer-icons p {
+    padding: 8px 0 0;
+  }
+}
+
+/* footer text is grey (#474747) — override the global paragraph colour */
+footer .footer p,
+footer .footer li {
+  color: #474747;
+}

@@ -2,7 +2,9 @@
 
 /* ===== Base: full-width band (icon, heading, text, button) ===== */
 
+/* band section: no section padding, 54px gap above (source margin-top) */
 main > .section.contact-callout-container:has(> .contact-callout-wrapper:only-child > .contact-callout:not(.downloads)) {
+  margin-top: 54px;
   padding: 0;
 }
 
@@ -15,14 +17,15 @@ main > .section.contact-callout-container:has(> .contact-callout-wrapper:only-ch
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 40px 24px;
-  background-color: var(--contact-callout-background, #7d3f98);
+  padding: 90px 0;
+  background-color: var(--contact-callout-background, var(--accent-color, #7d3f98));
   color: var(--contact-callout-color, #fff);
+  font-family: var(--body-font-family);
   text-align: center;
 }
 
 .contact-callout .contact-callout-icon {
+  margin-bottom: 18px;
   line-height: 0;
 }
 
@@ -30,10 +33,9 @@ main > .section.contact-callout-container:has(> .contact-callout-wrapper:only-ch
 .contact-callout .contact-callout-icon img,
 .contact-callout .contact-callout-icon .icon {
   display: block;
-  width: 72px;
-  height: 72px;
+  width: 75px;
+  height: 75px;
   margin: 0 auto;
-  object-fit: contain;
 }
 
 .contact-callout .contact-callout-icon p {
@@ -41,7 +43,11 @@ main > .section.contact-callout-container:has(> .contact-callout-wrapper:only-ch
 }
 
 .contact-callout .contact-callout-content {
-  max-width: 900px;
+  width: 100%;
+}
+
+.contact-callout:not(.downloads) .contact-callout-content {
+  padding-bottom: 7.5px;
 }
 
 .contact-callout .contact-callout-content > :first-child {
@@ -52,54 +58,54 @@ main > .section.contact-callout-container:has(> .contact-callout-wrapper:only-ch
   margin-bottom: 0;
 }
 
+/* heading and text lines: 27px / 37.8px Open Sans, regular, white */
 .contact-callout:not(.downloads) h1,
 .contact-callout:not(.downloads) h2,
 .contact-callout:not(.downloads) h3,
 .contact-callout:not(.downloads) h4,
 .contact-callout:not(.downloads) h5,
 .contact-callout:not(.downloads) h6,
-.contact-callout:not(.downloads) p,
+.contact-callout:not(.downloads) p {
+  margin: 0;
+  color: inherit;
+  font-family: var(--body-font-family);
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 37.8px;
+}
+
 .contact-callout:not(.downloads) a:not(.button) {
   color: inherit;
 }
 
-.contact-callout:not(.downloads) h1,
-.contact-callout:not(.downloads) h2,
-.contact-callout:not(.downloads) h3,
-.contact-callout:not(.downloads) h4,
-.contact-callout:not(.downloads) h5,
-.contact-callout:not(.downloads) h6 {
-  margin: 0 0 8px;
+/* "Got a Question?" semibold, phone number bold */
+.contact-callout:not(.downloads) strong,
+.contact-callout:not(.downloads) b {
+  font-weight: 700;
 }
 
-.contact-callout:not(.downloads) p {
-  margin: 0;
+.contact-callout:not(.downloads) .contact-callout-title > strong:first-child {
+  font-weight: 600;
 }
 
-.contact-callout .contact-callout-action {
+.contact-callout:not(.downloads) .contact-callout-action {
   margin-top: 16px;
 }
 
-@media (width >= 600px) {
-  .contact-callout {
-    padding: 56px 32px;
-  }
-}
-
-@media (width >= 900px) {
-  .contact-callout {
-    padding: 88px 32px;
-  }
-}
-
 /* ===== Option: downloads — grey rounded sidebar box with PDF link lists ===== */
+/* source div.content-panel-quicklinks */
 
 .contact-callout.downloads {
   display: block;
-  padding: 16px;
-  border-radius: 8px;
-  background-color: var(--contact-callout-downloads-background, #ececec);
-  color: var(--text-color, #000);
+  border-top: 10px solid rgb(0 0 0 / 10%);
+  border-bottom: 10px solid rgb(0 0 0 / 5%);
+  border-radius: 10px;
+  padding: 15px 14.0625px 30px;
+  background-color: rgb(237 237 237);
+  color: var(--text-color, #0a0a0a);
+  font-family: var(--body-font-family);
+  font-size: 15px;
+  line-height: 24px;
   text-align: left;
 }
 
@@ -107,57 +113,108 @@ main > .section.contact-callout-container:has(> .contact-callout-wrapper:only-ch
   max-width: none;
 }
 
+/* "Downloads": 22.5px / 600 purple, 30px document icon inline before the text */
 .contact-callout.downloads .contact-callout-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 12px;
+  margin: 0 0 7.5px;
+  color: var(--accent-color, #7d3f98);
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-l, 22.5px);
+  font-weight: 600;
+  line-height: 31.5px;
 }
 
-/* download icon: arrow over a tray, drawn in currentcolor */
+/* source img/icon-document.png (30px): download arrow over a tray, rounded strokes */
 .contact-callout.downloads .contact-callout-title::before {
   content: '';
-  flex: 0 0 auto;
-  width: 0.9em;
-  height: 0.9em;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 0.26em;
+  vertical-align: middle;
   background-color: currentcolor;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17zM4 19h16v2H4z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' fill='none' stroke='%23000' stroke-width='58' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M250 85v225M145 210l105 105 105-105M125 412h250'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-.contact-callout.downloads .contact-callout-subheading {
-  margin: 16px 0 4px;
-}
-
+/* year labels (authored h4 "2026" / "2025") read as the source bold text line */
+.contact-callout.downloads .contact-callout-subheading,
 .contact-callout.downloads .contact-callout-title + .contact-callout-subheading {
-  margin-top: 0;
+  margin: 0;
+  color: var(--text-color, #0a0a0a);
+  font-family: var(--body-font-family);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: normal;
 }
 
 .contact-callout.downloads p {
-  margin: 0 0 4px;
+  margin: 0 0 15px;
+  color: var(--text-color, #0a0a0a);
+  font-size: 15px;
+  line-height: 24px;
 }
 
+.contact-callout.downloads .contact-callout-content > p:last-child {
+  margin-bottom: 15px;
+}
+
+/* year subheading authored as a bold-only paragraph */
+.contact-callout.downloads p:has(> strong:only-child) {
+  margin: 0;
+}
+
+/* link lists: one link per 24px line, no bullets / indent, 15px after the group */
 .contact-callout.downloads ul {
-  margin: 0 0 12px;
+  margin: 0 0 15px;
   padding: 0;
   list-style: none;
 }
 
 .contact-callout.downloads li {
-  margin: 0 0 4px;
+  margin: 0;
+  color: var(--text-color, #0a0a0a);
+  line-height: 24px;
 }
 
 .contact-callout.downloads a {
   overflow-wrap: anywhere;
 }
 
-@media (width >= 600px) {
-  .contact-callout.downloads {
-    padding: 20px;
+@media (width >= 900px) {
+  /* fill the split section's 281px right column (no container side padding) */
+  .contact-callout-wrapper:has(> .contact-callout.downloads) {
+    padding: 0;
   }
 }
 
-@media (width >= 900px) {
-  .contact-callout.downloads {
-    padding: 24px 16px;
-  }
+/* band call to action: white button (source a.button.brand-button-white) */
+.contact-callout:not(.downloads) .contact-callout-action a.button.accent:any-link {
+  margin-top: 7.5px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  padding: 16.2px 32.4px;
+  background-color: #fff;
+  color: var(--accent-color, #7d3f98);
+  font-size: 16.2px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.contact-callout:not(.downloads) .contact-callout-action a.button.accent:hover,
+.contact-callout:not(.downloads) .contact-callout-action a.button.accent:focus-visible {
+  background-color: #f2f2f2;
+  color: var(--accent-color-hover, #643279);
+}
+
+/* CTA bands (with a button): the supporting line is body-size text, not a heading-size line */
+.contact-callout:not(.downloads):has(a.button) p:not(.contact-callout-action) {
+  margin-top: 7.5px;
+  font-size: 16.5px;
+  line-height: 1.6;
+}
+
+/* Downloads sidebar links: purple, underlined (source .content-panel-quicklinks a) */
+.contact-callout.downloads a:any-link {
+  color: var(--accent-color, #7d3f98);
+  text-decoration: underline;
 }

@@ -160,9 +160,11 @@ main > .section:has(.carousel.carousel-hero) {
   padding-bottom: 0;
 }
 
+/* thick brand-purple bar under the masthead (source .masthead-container) */
 main .carousel-wrapper:has(.carousel.carousel-hero) {
   max-width: unset;
   padding: 0;
+  border-bottom: 10px solid var(--accent-color);
 }
 
 .carousel.carousel-hero {
@@ -171,7 +173,34 @@ main .carousel-wrapper:has(.carousel.carousel-hero) {
 
 .carousel.carousel-hero .carousel-slide {
   align-items: center;
-  min-height: 320px;
+  min-height: 400px;
+  overflow: hidden;
+  background-color: var(--dark-color);
+}
+
+/* photo: full width, natural height, vertically centred; covers when shorter than the slide */
+.carousel.carousel-hero .carousel-slide .carousel-slide-image picture {
+  overflow: hidden;
+}
+
+.carousel.carousel-hero .carousel-slide .carousel-slide-image img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  transform: translateY(-50%);
+  object-fit: cover;
+}
+
+/* small screens: darken the photo so the overlay text stays legible */
+.carousel.carousel-hero .carousel-slide .carousel-slide-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0 0 0 / 50%);
+  pointer-events: none;
 }
 
 .carousel.carousel-hero .carousel-slide .carousel-slide-content {
@@ -183,7 +212,7 @@ main .carousel-wrapper:has(.carousel.carousel-hero) {
   margin: 0 auto;
   padding: var(--gap-lg, 24px) 56px;
   background-color: transparent;
-  color: var(--background-color, #fff);
+  color: #fff;
   text-align: center;
 }
 
@@ -193,120 +222,196 @@ main .carousel-wrapper:has(.carousel.carousel-hero) {
 .carousel.carousel-hero .carousel-slide-content p {
   margin: 0;
   color: inherit;
-  text-shadow: 0 1px 4px rgb(0 0 0 / 50%);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 400;
+  line-height: 1.4;
+  text-shadow: 0 0 25px rgb(0 0 0 / 30%);
+}
+
+/* source: subtitle p is 22.5px / 36px */
+.carousel.carousel-hero .carousel-slide-content p {
+  line-height: 1.6;
+}
+
+/* title: large serif display face (source 75px / 75px, weight 600) */
+.carousel.carousel-hero .carousel-slide-content > :first-child {
+  font-family: var(--display-font-family);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1;
 }
 
 /* subtitle: whatever follows the title (h2 or p) */
 .carousel.carousel-hero .carousel-slide-content > :first-child + * {
-  margin-top: var(--gap-xs, 8px);
+  margin-top: 0;
+  font-weight: 600;
 }
 
-/* arrows: bare chevrons, no circle */
+/* arrows: source img.slick-prev/.slick-next, 39x65 grey chevron PNG at opacity .7, 10px from the edge */
 .carousel.carousel-hero .carousel-navigation-buttons {
-  left: 4px;
-  right: 4px;
+  left: 10px;
+  right: 10px;
 }
 
 .carousel.carousel-hero .carousel-navigation-buttons button {
-  width: 44px;
-  height: 64px;
+  width: 39px;
+  height: 65px;
   border-radius: 0;
   background-color: transparent;
-  color: rgb(255 255 255 / 70%);
+  opacity: 0.7;
+  transition: opacity 0.2s;
 }
 
 .carousel.carousel-hero .carousel-navigation-buttons button:hover,
 .carousel.carousel-hero .carousel-navigation-buttons button:focus-visible {
   background-color: transparent;
-  color: var(--background-color, #fff);
+  opacity: 1;
 }
 
-.carousel.carousel-hero .carousel-navigation-buttons button::after {
-  width: 20px;
-  height: 20px;
-  border-width: 3px;
+.carousel.carousel-hero .carousel-navigation-buttons button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
-/* dots: overlaid at the bottom of the photo */
+.carousel.carousel-hero .carousel-navigation-buttons button::after,
+.carousel.carousel-hero .carousel-navigation-buttons button.slide-next::after {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 106'%3E%3Cpath d='M8.5 10.5 53.5 53 8.5 95.5' fill='none' stroke='%2388888a' stroke-width='9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  transform: none;
+}
+
+.carousel.carousel-hero .carousel-navigation-buttons button.slide-prev::after {
+  transform: scaleX(-1);
+}
+
+/* no wrap-around (source slick infinite: false): the arrow at either end is hidden */
+.carousel.carousel-hero .carousel-navigation-buttons button[aria-disabled='true'] {
+  visibility: hidden;
+}
+
+/* dots: source .slick-dots, 20x20 transparent buttons (5px padding) showing a 12px bullet,
+   inactive brand purple, active white; 5px above the bottom of the photo */
 .carousel.carousel-hero > nav {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 8px;
+  bottom: 5px;
   z-index: 2;
   pointer-events: none;
 }
 
 .carousel.carousel-hero .carousel-slide-indicators {
-  gap: 8px;
+  gap: 2px;
   padding: 0;
   background-color: transparent;
 }
 
 .carousel.carousel-hero .carousel-slide-indicator button {
+  position: relative;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--accent-color);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.carousel.carousel-hero .carousel-slide-indicator button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 12px;
   height: 12px;
-  background-color: var(--accent-color, #7d3f98);
-  pointer-events: auto;
+  border-radius: 50%;
+  background-color: currentcolor;
+  transform: translate(-50%, -50%);
 }
 
 .carousel.carousel-hero .carousel-slide-indicator button:disabled,
 .carousel.carousel-hero .carousel-slide-indicator button:hover,
 .carousel.carousel-hero .carousel-slide-indicator button:focus-visible {
-  background-color: var(--background-color, #fff);
+  background-color: transparent;
+  color: #fff;
 }
 
-/* pause/play toggle (JS-generated) — bottom-right of the photo */
+.carousel.carousel-hero .carousel-slide-indicator button:disabled {
+  cursor: default;
+}
+
+/* pause/play toggle (JS-generated): source a.play-pause-toggle, 20x20 icon at opacity .7,
+   10px from the right and 20px from the bottom of the photo; text label is visually hidden */
 .carousel.carousel-hero .carousel-autoplay-toggle {
   position: absolute;
-  right: 8px;
-  bottom: 4px;
+  right: 10px;
+  bottom: 20px;
   z-index: 3;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
+  display: block;
+  width: 20px;
+  height: 20px;
   margin: 0;
-  padding: 0 4px;
+  padding: 0;
   border: 0;
   border-radius: 0;
-  background: transparent;
-  color: rgb(255 255 255 / 80%);
-  font-size: var(--body-font-size-xs, 12px);
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M8 1h3.5v19H8zm7 0h3.5v19H15z' fill='%23fff'/%3E%3C/svg%3E") center / 20px 20px no-repeat;
+  opacity: 0.7;
   cursor: pointer;
+}
+
+.carousel.carousel-hero .carousel-autoplay-toggle.is-paused {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M8 1v18l11-9z' fill='%23fff'/%3E%3C/svg%3E");
 }
 
 .carousel.carousel-hero .carousel-autoplay-toggle:hover,
 .carousel.carousel-hero .carousel-autoplay-toggle:focus-visible {
-  color: var(--background-color, #fff);
+  opacity: 1;
 }
 
 .carousel.carousel-hero .carousel-autoplay-toggle:focus-visible {
-  outline: 2px solid currentcolor;
-  outline-offset: -4px;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.carousel.carousel-hero .carousel-autoplay-toggle-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 @media (width >= 600px) {
-  .carousel.carousel-hero .carousel-slide {
-    min-height: 400px;
-  }
-
   .carousel.carousel-hero .carousel-slide .carousel-slide-content {
     margin: 0 auto;
     padding: var(--gap-xl, 32px) 80px;
-  }
-
-  .carousel.carousel-hero .carousel-navigation-buttons {
-    left: 12px;
-    right: 12px;
   }
 }
 
 @media (width >= 900px) {
   .carousel.carousel-hero .carousel-slide {
     min-height: 500px;
+  }
+
+  .carousel.carousel-hero .carousel-slide .carousel-slide-image::after {
+    content: none;
+  }
+
+  .carousel.carousel-hero .carousel-slide-content h1,
+  .carousel.carousel-hero .carousel-slide-content h2,
+  .carousel.carousel-hero .carousel-slide-content h3,
+  .carousel.carousel-hero .carousel-slide-content p {
+    font-size: 22.5px;
+  }
+
+  .carousel.carousel-hero .carousel-slide-content > :first-child {
+    font-size: 75px;
   }
 }

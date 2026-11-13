@@ -1,0 +1,215 @@
+/* Header — mobile-first; inline nav from 600px (source switches at 640px) */
+
+header {
+  position: relative;
+  height: auto;
+  min-height: var(--nav-height, 64px);
+  background-color: #fefefe;
+}
+
+header .header {
+  font-family: 'Open Sans', 'open sans fallback', arial, sans-serif;
+}
+
+header .nav-wrapper {
+  background-color: #fefefe;
+}
+
+header nav {
+  box-sizing: border-box;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-top: 12px;
+}
+
+/* top row: logo + site title (stacked and centered on mobile) */
+header .nav-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px 12px;
+}
+
+header .nav-brand p {
+  margin: 0;
+  line-height: 0;
+}
+
+header .nav-brand a {
+  display: inline-block;
+}
+
+header .nav-brand img {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+header .nav-title {
+  text-align: center;
+  color: #7d3f98;
+}
+
+header .nav-title h2 {
+  margin: 0;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: normal;
+  color: inherit;
+}
+
+header .nav-title p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: inherit;
+}
+
+/* mobile "Menu" toggle bar */
+header .nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 37.5px;
+  padding: 0 11px;
+  background-color: #333;
+}
+
+header .nav-toggle button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #fefefe;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  cursor: pointer;
+}
+
+header .nav-toggle-icon {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 16px;
+}
+
+header .nav-toggle-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #fefefe;
+  box-shadow: 0 7px 0 #fefefe, 0 14px 0 #fefefe;
+}
+
+/* nav links: hidden on mobile until the menu is opened */
+header .nav-sections {
+  display: none;
+}
+
+header nav[aria-expanded='true'] .nav-sections {
+  display: block;
+}
+
+header ul.nav-sections {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header .nav-sections li {
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+header .nav-sections a:any-link {
+  display: block;
+  padding: 0 13.5px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 39px;
+  text-align: center;
+  color: #3f3f3f;
+  text-decoration: none;
+}
+
+header .nav-sections a:hover,
+header .nav-sections a:focus-visible,
+header .nav-sections a[aria-current='page'] {
+  color: #7d3f98;
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  header nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 12px 0 0;
+  }
+
+  header .nav-top {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 15px 0 0;
+  }
+
+  header .nav-brand img {
+    width: 165px;
+    height: 30px;
+  }
+
+  header .nav-title {
+    flex: 0 0 50%;
+    text-align: right;
+  }
+
+  header .nav-toggle {
+    display: none;
+  }
+
+  header .nav-sections,
+  header nav[aria-expanded='true'] .nav-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin-top: 3px;
+  }
+
+  header .nav-sections li {
+    border-bottom: 0;
+    border-right: 1px solid #aeaeae;
+  }
+
+  header .nav-sections li:last-child {
+    border-right: 0;
+  }
+
+  header .nav-sections a:any-link {
+    padding: 13.5px;
+    font-size: 15px;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+}

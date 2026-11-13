@@ -1,0 +1,808 @@
+/* stylelint-disable no-descending-specificity -- consolidated variant file */
+@import url('brand.css');
+
+/*
+ * Aetna State of Florida - Edge Delivery Services
+ * Design system migrated from https://www.aetnastateflorida.com/
+ * Tokens live in brand.css; base rules below come from the project boilerplate.
+ */
+
+/* --- RESET & BASE --- */
+
+body {
+  display: none;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+}
+
+body.appear {
+  display: block;
+}
+
+header {
+  min-height: var(--nav-height);
+  position: relative;
+  z-index: 100;
+}
+
+header .header,
+footer .footer {
+  visibility: hidden;
+}
+
+header .header[data-block-status="loaded"],
+footer .footer[data-block-status="loaded"] {
+  visibility: visible;
+}
+
+/* --- TYPOGRAPHY --- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: var(--gap-xs);
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-color-body);
+  scroll-margin: 40px;
+  letter-spacing: normal;
+}
+
+h1 { font-size: var(--heading-font-size-xxl); }
+h2 { font-size: var(--heading-font-size-xl); }
+h3 { font-size: var(--heading-font-size-l); }
+
+h4 {
+  font-size: var(--heading-font-size-m);
+  letter-spacing: 0;
+}
+
+h5 { font-size: var(--heading-font-size-s); }
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+  letter-spacing: 0.08em;
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
+  margin-top: 0;
+  margin-bottom: var(--gap-md);
+}
+
+p {
+  color: var(--text-color-body);
+  line-height: 1.6;
+}
+
+/* --- VERTICAL RHYTHM: Default content flow --- */
+
+/* Remove trailing margin on last child in any container */
+main .default-content-wrapper > *:last-child,
+main .section > div > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Button wrappers (CTA links) get 24px top margin for breathing room */
+main .default-content-wrapper p.button-wrapper {
+  margin-top: var(--gap-lg);
+  margin-bottom: 0;
+}
+
+/* Consecutive button wrappers: only the first gets the top gap */
+main .default-content-wrapper p.button-wrapper + p.button-wrapper {
+  margin-top: 0;
+}
+
+/* Headings following body paragraphs need extra space above (article flow) —
+   but NOT when following an eyebrow (first p in container) */
+main .default-content-wrapper p + p + h2,
+main .default-content-wrapper p + p + h3 {
+  margin-top: var(--gap-2xl);
+}
+
+main .default-content-wrapper p + p + h4,
+main .default-content-wrapper p + p + h5 {
+  margin-top: var(--gap-xl);
+}
+
+/* Section heading row: 32px below before content */
+main .section > div > h2:first-child {
+  margin-bottom: var(--gap-xl);
+}
+
+code,
+pre {
+  font-size: var(--body-font-size-s);
+}
+
+pre {
+  padding: var(--gap-md);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--light-color);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* blockquote — amber left border, italic */
+blockquote {
+  border-left: 4px solid var(--accent-color);
+  margin: var(--gap-lg) 0;
+  padding: var(--gap-md) var(--gap-lg);
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+blockquote p {
+  margin-bottom: var(--gap-sm);
+  color: var(--text-color-subtle);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+main > div {
+  margin: 0;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/* --- IMAGES --- */
+
+main img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+
+.icon img {
+  height: 100%;
+  width: 100%;
+}
+
+/* --- TAG PILL: shared eyebrow / category label --- */
+
+.tag-pill {
+  display: inline-block;
+  font-family: var(--heading-font-family);
+  font-size: var(--tag-font-size);
+  font-weight: 600;
+  letter-spacing: var(--tag-letter-spacing);
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  padding: var(--tag-padding);
+  border-radius: var(--button-border-radius);
+}
+
+/* --- LINKS --- */
+
+a:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+  overflow-wrap: break-word;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* focus ring — accessibility */
+*:focus-visible {
+  outline: 2px solid var(--dark-color);
+  outline-offset: 2px;
+}
+
+/* --- BUTTON SYSTEM --- */
+
+/* Button wrappers — display consecutive buttons as a row */
+main p.button-wrapper {
+  display: inline-flex;
+  margin: 0 var(--gap-md) 0 0;
+}
+
+main p.button-wrapper:last-child {
+  margin-right: 0;
+}
+
+p.button-wrapper {
+  margin: 0;
+}
+
+/* Decorated buttons (via p.button-wrapper > a.button) */
+a.button:any-link {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0;
+  border: 2px solid transparent;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+  font-family: var(--button-font-family);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  letter-spacing: var(--button-letter-spacing);
+  line-height: 1.25;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: var(--button-transition);
+}
+
+a.button:hover {
+  text-decoration: none;
+}
+
+
+/* Primary: purple filled, rounded (source a.button.brand-button-purple) */
+a.button.primary {
+  border: 1px solid transparent;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  line-height: 1;
+}
+
+a.button.primary:hover,
+a.button.primary:focus-visible {
+  background-color: var(--accent-color-hover);
+  color: #fff;
+}
+
+/* Secondary/Ghost: transparent bg, border matches context */
+a.button.secondary {
+  border-color: var(--dark-color);
+  background-color: transparent;
+  color: var(--dark-color);
+}
+
+a.button.secondary:hover {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+}
+
+/* Accent: white button on purple bands (source "Visit DocFind" style) */
+a.button.accent {
+  border-color: #fff;
+  background-color: #fff;
+  color: var(--accent-color);
+}
+
+
+/* button groups — stack on mobile */
+@media (width < 768px) {
+  .button-wrapper + .button-wrapper {
+    margin-top: var(--gap-sm);
+  }
+
+  .button-wrapper + .button-wrapper a.button,
+  .button-wrapper + .button-wrapper button.button {
+    width: 100%;
+  }
+}
+
+/* --- SECTIONS --- */
+
+main > .section {
+  margin: 0;
+  padding: var(--section-padding);
+}
+
+main > .section > div {
+  max-width: var(--container-max-width);
+  margin: auto;
+  padding: var(--container-padding);
+}
+
+/* Vertical spacing between adjacent block/content wrappers in the same section */
+main > .section > [class$="-wrapper"] + [class$="-wrapper"],
+main > .section > [class$="-wrapper"] + .default-content-wrapper,
+main > .section > .default-content-wrapper + [class$="-wrapper"] {
+  margin-top: var(--gap-2xl);
+}
+
+main > .section:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Hide empty sections */
+main > .section:not(:has(> *)) {
+  display: none;
+}
+
+/* --- SECTION METADATA STYLES --- */
+
+/* Highlight / Light: beige bg */
+main .section.light,
+main .section.highlight {
+  background-color: var(--light-color);
+}
+
+/* Dark: dark bg, white text */
+main > .section.dark {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+
+  --btn-shadow: var(--accent-color);
+}
+
+main > .section.dark h1,
+main > .section.dark h2,
+main > .section.dark h3,
+main > .section.dark h4,
+main > .section.dark h5,
+main > .section.dark h6 {
+  color: var(--background-color);
+}
+
+main > .section.dark p:not(.tag-pill) {
+  color: var(--text-on-dark);
+}
+
+main > .section.dark a:any-link:not(.button) {
+  color: var(--accent-color);
+}
+
+/* dark section: primary button inverts to white fill + amber shadow */
+main > .section.dark a.button.primary {
+  border-color: var(--background-color);
+  background-color: var(--background-color);
+  color: var(--dark-color);
+}
+
+/* dark section: ghost button uses white outline */
+main > .section.dark a.button.secondary {
+  border-color: rgb(255 255 255 / 50%);
+  background-color: transparent;
+  color: var(--background-color);
+}
+
+main > .section.dark a.button.secondary:hover {
+  background-color: var(--background-color);
+  border-color: var(--background-color);
+  color: var(--dark-color);
+}
+
+/* dark section: focus ring uses white */
+main > .section.dark *:focus-visible {
+  outline-color: var(--background-color);
+}
+
+/* Accent: orange bg, dark text */
+main > .section.accent {
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+
+  --btn-shadow: var(--background-color);
+}
+
+main > .section.accent h1,
+main > .section.accent h2,
+main > .section.accent h3,
+main > .section.accent h4,
+main > .section.accent h5,
+main > .section.accent h6 {
+  color: var(--dark-color);
+}
+
+main > .section.accent p {
+  color: var(--dark-color);
+}
+
+main > .section.accent > div > p:not(.tag-pill) {
+  font-size: 20px;
+}
+
+/* accent section: primary button uses black fill + white shadow */
+main > .section.accent a.button.primary {
+  border-color: var(--dark-color);
+  background-color: var(--dark-color);
+  color: var(--background-color);
+}
+
+main > .section.accent a.button.secondary {
+  border-color: var(--dark-color);
+  color: var(--dark-color);
+  background-color: transparent;
+}
+
+/* Secondary: light bg (kept for backward compatibility) */
+main > .section.secondary {
+  background-color: var(--light-color);
+}
+
+/* Narrow: constrains content to narrow max-width */
+main .section.narrow > div {
+  max-width: var(--container-narrow-max-width);
+}
+
+/* Center: explicit text + button centering (opt-in via section-metadata) */
+main > .section.center {
+  text-align: center;
+}
+
+main > .section.center .button-group {
+  justify-content: center;
+}
+
+main > .section.center .button-wrapper {
+  display: inline-block;
+  margin: 4px 8px;
+}
+
+/* Accent section: tag pill uses dark bg instead of accent */
+main .section.accent .tag-pill {
+  background-color: var(--dark-color);
+}
+
+/* Body paragraphs in dark/narrow sections */
+main .section.dark.narrow p:not(.tag-pill) {
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+}
+
+main .section.dark.narrow h2 {
+  margin-bottom: var(--gap-lg);
+}
+
+/* --- ARTICLE BODY --- */
+
+/* article body — narrow reading column after hero (article) */
+.hero-container:has(.article) + .section > div {
+  max-width: var(--container-narrow-max-width);
+}
+
+/* image captions in article body */
+.hero-container:has(.article) + .section > div > p:has(> img) + p {
+  font-size: var(--body-font-size-s);
+  color: var(--text-color-muted);
+  font-style: italic;
+  margin-top: -8px;
+}
+
+/* --- BUTTON GROUP --- */
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-xs);
+  margin: var(--gap-xs) 0;
+}
+
+
+main .default-content-wrapper .button-group p.button-wrapper {
+  margin: 0;
+}
+
+/* --- REDUCED MOTION — ACCESSIBILITY --- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* --- AETNA STATE OF FLORIDA: SECTION STYLES --- */
+
+/* centered: narrow centered column (source .content-panel > .cell, ~844px) */
+main > .section.centered > div {
+  max-width: var(--container-narrow-max-width);
+  text-align: center;
+}
+
+main > .section.centered h3 {
+  margin: 18px 0 7.5px;
+  font-size: var(--heading-font-size-m);
+  line-height: 1.4;
+}
+
+main > .section.centered h3:first-child {
+  margin-top: 0;
+  margin-bottom: 11.25px;
+  font-size: var(--heading-font-size-l);
+  line-height: 1.2;
+}
+
+main > .section.centered h3:first-child + p {
+  font-size: var(--body-font-size-l);
+  line-height: 1.6;
+}
+
+/* thin grey rule before each following heading (source .utility-simple-rule) */
+main > .section.centered h3:not(:first-child)::before {
+  content: '';
+  display: block;
+  margin: 0 0 33px;
+  padding-top: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+main > .section.centered p {
+  margin-bottom: 15px;
+}
+
+main > .section.centered p.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 15px;
+}
+
+/* purple: full-width brand band with darker bottom strip */
+main > .section.purple {
+  border-bottom: 20px solid var(--accent-color-dark);
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+main > .section.purple h1,
+main > .section.purple h2,
+main > .section.purple h3,
+main > .section.purple h4,
+main > .section.purple p {
+  color: #fff;
+}
+
+main > .section.purple a:any-link:not(.button) {
+  color: #fff;
+}
+
+/* grey: tagline bar under inner-page heroes (source .textbar-grey) */
+main > .section.grey {
+  padding: 23.4px 0;
+  background-color: #ccc;
+  text-align: center;
+}
+
+main > .section.grey p {
+  margin: 0;
+  font-size: var(--heading-font-size-m);
+  line-height: 1.5;
+  color: #000;
+}
+
+/* narrow: inner-page text column (source .content-panel > .cell.large-6/7, ~600px) */
+main > .section.narrow > div {
+  box-sizing: border-box;
+  max-width: 658px;
+}
+
+main > .section.narrow h3 {
+  margin: 0 0 7.5px;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--accent-color);
+}
+
+main > .section.narrow p {
+  margin: 0 0 15px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* flyer lists (bold title + date, then PDF links): thin rule between items */
+main > .section.narrow .default-content-wrapper > p:has(> strong:first-child) + p:has(> strong:first-child) {
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+main > .section.narrow .default-content-wrapper > h3 + p:has(> strong:first-child) {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+main > .section.narrow p > strong:first-child:not(:has(a)) {
+  font-size: var(--heading-font-size-m);
+}
+
+main > .section.narrow p a:any-link:not(.button) {
+  font-weight: 700;
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* full-width CTA (source a.button.alert-bar-button) */
+main > .section.narrow p.button-wrapper {
+  display: flex;
+  margin: 15px 0;
+}
+
+main > .section.narrow p.button-wrapper a.button {
+  width: 100%;
+}
+
+/* split: plan bullets beside the Downloads sidebar (source large-6 + large-3 cells) */
+main > .section.split .default-content-wrapper ul {
+  margin: 0 0 15px 30px;
+  padding: 0;
+  line-height: 1.6;
+}
+
+main > .section.split h3,
+main > .section.wide-column h3:first-child {
+  margin: 0 0 7.5px;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--accent-color);
+}
+
+@media (width >= 900px) {
+  main > .section.split {
+    display: grid;
+    grid-template-columns: 563px 281px;
+    justify-content: center;
+    align-items: start;
+  }
+
+  main > .section.split > div {
+    max-width: none;
+    margin: 0;
+  }
+
+  main > .section.split > .default-content-wrapper {
+    padding: 0 45px 0 14px;
+  }
+
+  main > .section.split > [class$='-wrapper'] + [class$='-wrapper'] {
+    margin-top: 0;
+  }
+}
+
+/* wide-column: left-aligned text column (source large-9, 816px) */
+main > .section.wide-column > div {
+  box-sizing: border-box;
+  max-width: 844px;
+}
+
+main > .section.wide-column h3:not(:first-child) {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+main > .section.wide-column p {
+  color: var(--text-color);
+}
+
+/* highlights: plan highlights card — purple title bar over a white shadowed panel */
+main > .section.highlights > .default-content-wrapper {
+  box-sizing: border-box;
+  max-width: 816px;
+  padding: 0 0 30px;
+  box-shadow: 0 2px 10px -2px rgb(0 0 0 / 66%);
+  line-height: 1.5;
+}
+
+main > .section.highlights > .default-content-wrapper > h3:first-child {
+  margin: 0 0 7.5px;
+  padding: 30px;
+  background-color: var(--accent-color);
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+}
+
+main > .section.highlights > .default-content-wrapper > :not(h3:first-child) {
+  margin-right: 30px;
+  margin-left: 30px;
+  color: var(--text-color);
+}
+
+main > .section.highlights > .default-content-wrapper > p {
+  margin-bottom: 0;
+}
+
+main > .section.highlights > .default-content-wrapper > ul {
+  margin: 0 30px 15px 60px;
+  padding: 0;
+}
+
+/* thin rule before each new benefit group (source .utility-simple-rule) */
+main > .section.highlights > .default-content-wrapper > p:has(> strong:first-child):not(h3 + p) {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+main > .section.highlights > .default-content-wrapper > h3 + p {
+  margin-top: 30px;
+}
+
+/* --- review fixes --- */
+
+/* lists in inner-page text columns (source .content-panel-ul) */
+main > .section.narrow .default-content-wrapper ul,
+main > .section.wide-column .default-content-wrapper ul {
+  margin: 0 0 15px 18.75px;
+  padding: 0;
+}
+
+main > .section.narrow li,
+main > .section.split li,
+main > .section.highlights li {
+  line-height: 24px;
+}
+
+main > .section.narrow li a:any-link {
+  font-weight: 700;
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+main > .section.wide-column .default-content-wrapper > p:last-child {
+  margin-bottom: 15px;
+}
+
+/* plan highlights: indent lists 30px inside the card text */
+main > .section.highlights > .default-content-wrapper > ul:not(h3:first-child) {
+  margin: 0 30px 15px 60px;
+  padding: 0;
+}
+
+/* stacked full-width CTAs in text columns (source a.button.alert-bar-button) */
+main > .section.narrow .button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 15px 0;
+}
+
+main > .section.narrow .button-group p.button-wrapper,
+main > .section.narrow p.button-wrapper {
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+
+main > .section.narrow p.button-wrapper a.button {
+  justify-content: center;
+  width: 100%;
+  padding: 11.475px 13.5px;
+  text-decoration: underline;
+}

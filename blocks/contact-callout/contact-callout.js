@@ -18,7 +18,7 @@ function isIconCell(cell) {
 function isPdfLink(a) {
   try {
     return /\.pdf$/i.test(new URL(a.href, window.location.href).pathname);
-  } catch (e) {
+  } catch {
     return false;
   }
 }
@@ -64,6 +64,14 @@ export default function decorate(block) {
   } else {
     const firstHeading = content.querySelector('h1, h2, h3, h4, h5, h6');
     if (firstHeading) firstHeading.classList.add('contact-callout-title');
+    // a paragraph holding only a link is the band's call to action (white button)
+    content.querySelectorAll('p').forEach((p) => {
+      const links = p.querySelectorAll('a');
+      if (links.length === 1 && p.textContent.trim() === links[0].textContent.trim()) {
+        links[0].classList.add('button', 'accent');
+        links[0].classList.remove('primary', 'secondary');
+      }
+    });
     content.querySelectorAll('a.button').forEach((a) => {
       const p = a.closest('p');
       if (p) p.classList.add('contact-callout-action');
