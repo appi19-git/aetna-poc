@@ -1,0 +1,35 @@
+{
+  "analysis-summary": {
+    "status": "complete",
+    "metadata": {
+      "siteUrl": "https://www.aetnastateflorida.com/",
+      "siteName": "www.aetnastateflorida.com",
+      "analysisDate": "2026-11-13",
+      "rootPageTitle": "Aetna State of Florida - Home"
+    },
+    "metrics": {
+      "urlDiscoveryMethod": "MCP",
+      "totalPages": 8,
+      "localeCount": 1,
+      "locales": [
+        {
+          "locale": "en",
+          "pages": 8
+        }
+      ],
+      "totalTemplates": 5,
+      "totalBlockTypes": 6,
+      "unknownBlockVariants": 0,
+      "edsBlockVariants": 6,
+      "pagesAnalyzed": 8,
+      "percentAnalyzed": 100,
+      "pagesPending": 0,
+      "pagesFailed": 0,
+      "blockDetectionCrashes": 0,
+      "blockNaming": "applied"
+    },
+    "errors": {
+      "totalCount": 1
+    }
+  }
+}

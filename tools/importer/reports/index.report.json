@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.aetnastateflorida.com/",
+  "path": "index",
+  "timestamp": "2026-11-13T10:37:40.235Z",
+  "title": "Aetna State of Florida - Home",
+  "template": "home",
+  "blocks": [
+    "carousel-hero",
+    "cards-icon-link",
+    "hero-callout"
+  ],
+  "importScript": "963370e91e4e"
+}

@@ -1,0 +1,28 @@
+{
+  "variantName": "cards",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Base: auto-fill grid of bordered cards with a 4:3 image above the body; the whole card is wrapped in its first link. Option cards-article: rounded article cards with 16:10 image, tag pill and Read More link. Option cards-feature: text-only glass cards for dark sections. Option cards-icon: light-grey rounded, shadowed tiles with a small ~56px icon, an h3 title and a Learn more button aligned to the tile bottom; the button stays a real link (no full-card wrapper). Option cards-icon-link: no tile chrome (no border, background or shadow), a larger ~100px icon centered above a purple underlined H3 title ending in '\u00bb' and a short centered description; the whole item is one link. One column on mobile, three columns from 600px.",
+  "contentPattern": "One row per card: an image cell (picture or img in p) and a body cell (optional tag, heading, text, link). JS converts rows to ul/li with cards-card-image and cards-card-body.",
+  "options": [
+    {
+      "class": "cards-article",
+      "label": "Cards article"
+    },
+    {
+      "class": "cards-feature",
+      "label": "Cards feature"
+    },
+    {
+      "class": "cards-icon",
+      "label": "Cards icon"
+    },
+    {
+      "class": "cards-icon-link",
+      "label": "Cards icon link"
+    }
+  ],
+  "memberVariantIds": [],
+  "usage": "Grids of repeating teasers. Use cards-icon for benefit/service tiles with an icon, a title and a Learn more button. Use cards-icon-link for chrome-less icon quick links where the whole item links to its target.",
+  "reuseGuidance": "Keep the image cell + body cell per row model. Icons may be SVG; they are left un-optimized by design."
+}

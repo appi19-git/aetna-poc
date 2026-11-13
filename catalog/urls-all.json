@@ -1,0 +1,360 @@
+{
+  "analysis-urls-all": {
+    "captured": "2026-11-13T10:46:32.702Z",
+    "totalUrls": 8,
+    "totalDocuments": 76,
+    "method": "playwright",
+    "sitemapURL": null,
+    "robotsTxtFound": false,
+    "robotsTxtRulesApplied": false,
+    "limitations": "Sitemap and crawl methods failed, used Playwright MCP",
+    "confidence": "70%",
+    "statusBreakdown": {
+      "success": 8,
+      "redirect": 0,
+      "clientError": 0,
+      "serverError": 0,
+      "errorTimeout": 0
+    },
+    "urls": [
+      {
+        "url": "https://www.aetnastateflorida.com/",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/index.php",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/hmo.php",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/healthinvestor-hmo.php",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/extras.php",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/tools.php",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/contact-us.php",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/well-being-library.php",
+        "status": 200
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaIDcard.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2026/STATE-OF-FLORIDA_RemediatedStandardHMO-SBC2026-English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2026/STATE-OF-FLORIDA_RemediatedStandardHMO-SBC2026-Spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2025/STATE-OF-FLORIDA_Standard-HMO-SBC-2025-English-FL-EDITS.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2025/STATE-OF-FLORIDA_Standard-HMO-SBC-2025-Spanish-FL-EDITS_SP.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2025/OA-Aetna-Select-Standard-HMO-SOF-SPD_2025.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/medical/Open_Access_Aetna_Select_Brochure.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/medical/Open_Access_Aetna_Select_Brochure_Spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2026/STATE-OF-FLORIDA_RemediatedHDHP-SBC2026-English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2026/STATE-OF-FLORIDA_RemediatedHDHP-SBC2026-Spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2025/STATE-OF-FLORIDA-HDHP-SBC-2025-Final-English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2025/STATE-OF-FLORIDA-HDHP-SBC-2025-Spanish-Final.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2025/OA-Aetna-Select-HDHP-HealthInvestorPlan-SOF-SPD_2025.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2027/69198-STATEFL-2026-OE-Guide-English_Final_ADA.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2027/69198-STATEFL-2026-OE-Guide-Spanish_Final_ADA.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2025/2786-STATEFL-2026%20OE%20Guides_DIGITAL_English_R4.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2025/2786-STATEFL-2026%20OE%20Guides_DIGITAL_Spanish_R4.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaDiscountProgram_English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaDiscountProgram_Spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2016_Aetna_In_Touch_Care.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2024/2023-Aetna_One_Flex_Member_Flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaSimpleSteps_English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaHealthyLifestyleCoaching_English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaHealthyLifestyleCoaching_Spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaInformedHealthLine_English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaInformedHealthLine_Spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaBeginningRightMaternityProgram_English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaBeginningRightMaternityProgram_Spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/Aetna_Womens_Health.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2024/Aetna-ASO-Standard-HMO-State-of-Florida.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2024/Aetna-ASO-HDHP-State-of-Florida.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2024/Skip-the-ER-with-Teladoc.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2024/Member-Care-Options-Flyer-With-Teladoc_Revised.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2027/Florida-SHP-Flyer-Indesign-Revised.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2027/Critical-Incident-Revised-Indesign.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaDocFind_English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaDocFind_Spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaNavigator_English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaNavigator_Spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2023/AetnaHealthApp&NewMemberWebsiteFlyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaMobile_English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaMemberPaymentEstimator_English.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2018_AetnaPreventiveCare.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/TOC.PDF",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/2027/StateofFL_Provider_Nomination_Form.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/appealform.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/aetna_request_eru_form.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/ERO_Expedited_Form.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/12-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/12-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/11-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/11-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/10-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/10-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/09-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/09-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/08-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/08-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/07-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/07-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/06-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/06-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/05-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/05-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/Mental-Health-Awareness-Guidebook.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/MindCheck-flyer-members.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/Mental-health-support-and-resources-for-you.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/Parent-and-Caregiver-Mental-Health-Guidebook.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/04-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/04-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/03-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/03-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/02-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/02-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/01-2024_Well-being-member-flyer.pdf",
+        "status": 200
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/pdf/well-being/01-2024_Well-being-member-flyer-spanish.pdf",
+        "status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "v_7acfab28c43d",
+  "type": "custom",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T10:47:39.923Z",
+  "sourceContext": {
+    "originUrl": "https://www.aetnastateflorida.com/healthinvestor-hmo.php",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading + text + link"
+  },
+  "layoutKey": "~(T)",
+  "colour": "~w(Tk)",
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.aetnastateflorida.com/healthinvestor-hmo.php",
+        "instanceId": "562532eff4cc",
+        "instanceIds": [
+          "562532eff4cc"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_healthinvestor-hmo_php--5875cc39/blocks/562532eff4cc.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/hmo.php",
+        "instanceId": "562532eff4cc",
+        "instanceIds": [
+          "562532eff4cc"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_hmo_php--02b59065/blocks/562532eff4cc.jpg"
+      }
+    ],
+    "reuseCount": 2
+  },
+  "naming": {
+    "confidence": "low",
+    "reason": "a sidebar list of PDF download links has a different job from the phone contact callout",
+    "mergedInto": null
+  }
+}

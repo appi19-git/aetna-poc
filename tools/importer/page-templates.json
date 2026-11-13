@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.aetnastateflorida.com/",
+        "https://www.aetnastateflorida.com/index.php"
+      ],
+      "description": "Landing page with rotating photo carousel, row of three icon links, centered intro text with a PDF button and a purple contact callout band",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [
+            "div.masthead-container section.masthead"
+          ]
+        },
+        {
+          "name": "cards-icon-link",
+          "instances": [
+            "div.homepage-threeiconlinks"
+          ]
+        },
+        {
+          "name": "hero-callout",
+          "instances": [
+            "div.textbar-callout-purple"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc2",
+          "name": "Hero carousel (masthead)",
+          "selector": [
+            "div.masthead-container"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc4",
+          "name": "Three icon links",
+          "selector": [
+            "section:has(> div > div.homepage-threeiconlinks)",
+            "section:has(.homepage-threeiconlinks)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-icon-link"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc5",
+          "name": "Welcome text and temporary ID card",
+          "selector": [
+            "section:has(div.content-panel)"
+          ],
+          "style": "centered",
+          "blocks": [],
+          "defaultContent": [
+            "div.content-panel h3.text-section-h3",
+            "div.content-panel p.text-section-p-big",
+            "div.content-panel p.text-section-p",
+            "div.content-panel center > a.button"
+          ]
+        },
+        {
+          "id": "rc6",
+          "name": "Phone callout",
+          "selector": [
+            "div.textbar-callout-purple"
+          ],
+          "style": "purple",
+          "blocks": [
+            "hero-callout"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "two-column-page",
+      "urls": [
+        "https://www.aetnastateflorida.com/contact-us.php"
+      ],
+      "description": "Inner page with photo hero and tagline bar followed by a two-thirds / one-third split content area",
+      "blocks": []
+    },
+    {
+      "name": "content-page",
+      "urls": [
+        "https://www.aetnastateflorida.com/extras.php",
+        "https://www.aetnastateflorida.com/well-being-library.php"
+      ],
+      "description": "Inner page with full-width photo hero and grey tagline bar, followed by a single centered column of headings, text and links",
+      "blocks": []
+    },
+    {
+      "name": "detail-with-sidebar",
+      "urls": [
+        "https://www.aetnastateflorida.com/healthinvestor-hmo.php",
+        "https://www.aetnastateflorida.com/hmo.php"
+      ],
+      "description": "Inner page with photo hero and tagline bar, main text column beside a grey downloads sidebar, stacked text sections, a highlighted summary panel and a purple callout band",
+      "blocks": []
+    },
+    {
+      "name": "accordion-page",
+      "urls": [
+        "https://www.aetnastateflorida.com/tools.php"
+      ],
+      "description": "Inner page with photo hero and tagline bar, short intro heading and text, then a list of expandable accordion rows",
+      "blocks": []
+    }
+  ]
+}

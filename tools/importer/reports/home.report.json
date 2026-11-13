@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.trinetaetna.com/home",
+  "path": "home",
+  "timestamp": "2026-11-12T18:01:05.071Z",
+  "title": "Trinet | Home",
+  "template": "home",
+  "blocks": [
+    "hero-card",
+    "columns-divider",
+    "cards-icon"
+  ],
+  "importScript": "0a6834bf2255"
+}

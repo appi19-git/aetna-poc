@@ -1,0 +1,16 @@
+{
+  "variantName": "columns",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Base: cells side by side from tablet up, stacked on mobile; image cells get columns-img-col and are shown first when stacked. Option columns-about: image + text two-up with rounded 4:3 image. Option columns-promo: narrow two-up bordered promo cards with ghost buttons. Option columns-pullquote: gear list next to a dark pull-quote panel. Option columns-divider: two text-only columns separated by a thin vertical divider line, hidden when the columns stack on mobile.",
+  "contentPattern": "One row with one cell per column. Cells hold default content (headings, paragraphs, lists, links, buttons) or a single image. JS classifies each cell as columns-img-col or columns-text-col.",
+  "options": [
+    { "class": "columns-about", "label": "Columns about" },
+    { "class": "columns-promo", "label": "Columns promo" },
+    { "class": "columns-pullquote", "label": "Columns pullquote" },
+    { "class": "columns-divider", "label": "Columns divider" }
+  ],
+  "memberVariantIds": [],
+  "usage": "Side-by-side content. Use columns-divider for two text columns (e.g. member info next to login/contact info) that need a vertical rule between them.",
+  "reuseGuidance": "Keep the one-row, one-cell-per-column model. Prefer an existing option before adding a new one."
+}

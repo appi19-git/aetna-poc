@@ -1,0 +1,77 @@
+{
+  "analysis-urls-checklist": {
+    "captured": "2026-11-13T10:47:01.951Z",
+    "totalPages": 8,
+    "statusBreakdown": {
+      "marked": 0,
+      "analyzed": 8,
+      "failed": 0
+    },
+    "pages": {
+      "https://www.aetnastateflorida.com/": {
+        "url": "https://www.aetnastateflorida.com/",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T10:47:11.598Z",
+        "slug": "www_aetnastateflorida_com--9e04b7f9",
+        "title": "Aetna State of Florida - Home",
+        "componentBlockCount": 4
+      },
+      "https://www.aetnastateflorida.com/index.php": {
+        "url": "https://www.aetnastateflorida.com/index.php",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T10:47:14.532Z",
+        "slug": "www_aetnastateflorida_com_index_php--189aa375",
+        "title": "Aetna State of Florida - Home",
+        "componentBlockCount": 4
+      },
+      "https://www.aetnastateflorida.com/hmo.php": {
+        "url": "https://www.aetnastateflorida.com/hmo.php",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T10:47:18.575Z",
+        "slug": "www_aetnastateflorida_com_hmo_php--02b59065",
+        "title": "Aetna State of Florida - HMO Plan",
+        "componentBlockCount": 3
+      },
+      "https://www.aetnastateflorida.com/healthinvestor-hmo.php": {
+        "url": "https://www.aetnastateflorida.com/healthinvestor-hmo.php",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T10:47:19.920Z",
+        "slug": "www_aetnastateflorida_com_healthinvestor-hmo_php--5875cc39",
+        "title": "Aetna State of Florida - HMO Plan",
+        "componentBlockCount": 3
+      },
+      "https://www.aetnastateflorida.com/extras.php": {
+        "url": "https://www.aetnastateflorida.com/extras.php",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T10:47:19.529Z",
+        "slug": "www_aetnastateflorida_com_extras_php--daeb96e5",
+        "title": "Aetna State of Florida - Aetna Extras",
+        "componentBlockCount": 2
+      },
+      "https://www.aetnastateflorida.com/tools.php": {
+        "url": "https://www.aetnastateflorida.com/tools.php",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T10:47:22.925Z",
+        "slug": "www_aetnastateflorida_com_tools_php--ae2345d4",
+        "title": "Aetna State of Florida - Member tools",
+        "componentBlockCount": 2
+      },
+      "https://www.aetnastateflorida.com/contact-us.php": {
+        "url": "https://www.aetnastateflorida.com/contact-us.php",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T10:47:25.662Z",
+        "slug": "www_aetnastateflorida_com_contact-us_php--87ca51f8",
+        "title": "Aetna State of Florida - Contact us",
+        "componentBlockCount": 1
+      },
+      "https://www.aetnastateflorida.com/well-being-library.php": {
+        "url": "https://www.aetnastateflorida.com/well-being-library.php",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-13T10:47:28.411Z",
+        "slug": "www_aetnastateflorida_com_well-being-library_php--8858dc9c",
+        "title": "Aetna State of Florida - Well-Being Library",
+        "componentBlockCount": 1
+      }
+    }
+  }
+}

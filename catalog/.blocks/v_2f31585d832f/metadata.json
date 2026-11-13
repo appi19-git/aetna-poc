@@ -1,0 +1,46 @@
+{
+  "id": "v_2f31585d832f",
+  "type": "cards",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T10:47:39.923Z",
+  "sourceContext": {
+    "originUrl": "https://www.aetnastateflorida.com/",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "hasGrid": true,
+    "imagePattern": "noimg",
+    "structure": "link + image + heading + text"
+  },
+  "layoutKey": "[T]",
+  "colour": "[Tk]",
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.aetnastateflorida.com/",
+        "instanceId": "c1d083f36fbb",
+        "instanceIds": [
+          "c1d083f36fbb"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com--9e04b7f9/blocks/c1d083f36fbb.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/index.php",
+        "instanceId": "c1d083f36fbb",
+        "instanceIds": [
+          "c1d083f36fbb"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_index_php--189aa375/blocks/c1d083f36fbb.jpg"
+      }
+    ],
+    "reuseCount": 2
+  },
+  "naming": {
+    "confidence": "low",
+    "reason": "look-alike icon + link title + description items; a fixed set of three could also be columns",
+    "mergedInto": null
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "v_ad64efbdb878",
+  "type": "carousel",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T10:47:39.922Z",
+  "sourceContext": {
+    "originUrl": "https://www.aetnastateflorida.com/",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasGrid": true,
+    "imagePattern": "noimg",
+    "structure": "image"
+  },
+  "layoutKey": "T",
+  "colour": "T",
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.aetnastateflorida.com/",
+        "instanceId": "0ccf58e519c9",
+        "instanceIds": [
+          "0ccf58e519c9",
+          "8fafe0d4f614"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com--9e04b7f9/blocks/0ccf58e519c9.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/healthinvestor-hmo.php",
+        "instanceId": "abde1e72d956",
+        "instanceIds": [
+          "abde1e72d956"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_healthinvestor-hmo_php--5875cc39/blocks/abde1e72d956.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/hmo.php",
+        "instanceId": "abde1e72d956",
+        "instanceIds": [
+          "abde1e72d956"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_hmo_php--02b59065/blocks/abde1e72d956.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/index.php",
+        "instanceId": "0ccf58e519c9",
+        "instanceIds": [
+          "0ccf58e519c9",
+          "8fafe0d4f614"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_index_php--189aa375/blocks/0ccf58e519c9.jpg"
+      }
+    ],
+    "reuseCount": 4
+  },
+  "naming": {
+    "confidence": "high",
+    "reason": "rotating image slides with arrow, dots and pause controls",
+    "mergedInto": null
+  }
+}
