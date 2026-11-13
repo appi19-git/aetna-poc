@@ -1,0 +1,78 @@
+{
+  "id": "v_e6d72508518a",
+  "type": "hero",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T10:47:39.923Z",
+  "sourceContext": {
+    "originUrl": "https://www.aetnastateflorida.com/contact-us.php",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading"
+  },
+  "layoutKey": "~@(T)",
+  "colour": "~@(Tw)",
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.aetnastateflorida.com/contact-us.php",
+        "instanceId": "12ef1d0018f4",
+        "instanceIds": [
+          "12ef1d0018f4"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_contact-us_php--87ca51f8/blocks/12ef1d0018f4.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/extras.php",
+        "instanceId": "a8ecb3051e0c",
+        "instanceIds": [
+          "a8ecb3051e0c"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_extras_php--daeb96e5/blocks/a8ecb3051e0c.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/healthinvestor-hmo.php",
+        "instanceId": "e25b4256b52e",
+        "instanceIds": [
+          "e25b4256b52e"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_healthinvestor-hmo_php--5875cc39/blocks/e25b4256b52e.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/hmo.php",
+        "instanceId": "3bfe9cfab311",
+        "instanceIds": [
+          "3bfe9cfab311"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_hmo_php--02b59065/blocks/3bfe9cfab311.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/tools.php",
+        "instanceId": "0ba84e16b563",
+        "instanceIds": [
+          "0ba84e16b563"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_tools_php--ae2345d4/blocks/0ba84e16b563.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/well-being-library.php",
+        "instanceId": "85a57dc05ff8",
+        "instanceIds": [
+          "85a57dc05ff8"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_well-being-library_php--8858dc9c/blocks/85a57dc05ff8.jpg"
+      }
+    ],
+    "reuseCount": 6
+  },
+  "naming": {
+    "confidence": "high",
+    "reason": "opens every inner page with a full-width background photo and a centered page title",
+    "mergedInto": null
+  }
+}

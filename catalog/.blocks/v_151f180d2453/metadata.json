@@ -1,0 +1,46 @@
+{
+  "id": "v_151f180d2453",
+  "type": "custom",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T10:47:39.923Z",
+  "sourceContext": {
+    "originUrl": "https://www.aetnastateflorida.com/",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "image + heading"
+  },
+  "layoutKey": "~(T)",
+  "colour": "~p(Tk)",
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.aetnastateflorida.com/",
+        "instanceId": "abde1e72d956",
+        "instanceIds": [
+          "abde1e72d956"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com--9e04b7f9/blocks/abde1e72d956.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/index.php",
+        "instanceId": "abde1e72d956",
+        "instanceIds": [
+          "abde1e72d956"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_index_php--189aa375/blocks/abde1e72d956.jpg"
+      }
+    ],
+    "reuseCount": 2
+  },
+  "naming": {
+    "confidence": "low",
+    "reason": "coloured contact box with icon, heading and phone lines that shares its section; no library block fits, and it is close to plain text in a styled section",
+    "mergedInto": null
+  }
+}

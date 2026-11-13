@@ -1,0 +1,114 @@
+{
+  "block-catalog": {
+    "schemaVersion": 2,
+    "captured": "2026-11-13T10:47:41.574Z",
+    "totalBlockVariants": 6,
+    "totalBlocksProcessed": 20,
+    "newVariantsCreated": 6,
+    "variantsReused": 14,
+    "layoutKeyThreshold": 0.85,
+    "completionStatus": {
+      "analyzed": 8,
+      "failed": 0
+    },
+    "blockVariants": {
+      "v_ad64efbdb878": {
+        "id": "v_ad64efbdb878",
+        "name": "carousel",
+        "type": "carousel",
+        "canonicalModel": "standalone",
+        "pagesFound": 4,
+        "placedBy": "naming",
+        "confidenceLevel": "high",
+        "confidenceReason": "rotating image slides with arrow, dots and pause controls",
+        "description": "image",
+        "screenshots": [
+          ".pages/www_aetnastateflorida_com--9e04b7f9/blocks/0ccf58e519c9.jpg",
+          ".pages/www_aetnastateflorida_com_healthinvestor-hmo_php--5875cc39/blocks/abde1e72d956.jpg",
+          ".pages/www_aetnastateflorida_com_hmo_php--02b59065/blocks/abde1e72d956.jpg",
+          ".pages/www_aetnastateflorida_com_index_php--189aa375/blocks/0ccf58e519c9.jpg"
+        ]
+      },
+      "v_e6d72508518a": {
+        "id": "v_e6d72508518a",
+        "name": "hero",
+        "type": "hero",
+        "canonicalModel": "standalone",
+        "pagesFound": 6,
+        "placedBy": "naming",
+        "confidenceLevel": "high",
+        "confidenceReason": "opens every inner page with a full-width background photo and a centered page title",
+        "description": "heading",
+        "screenshots": [
+          ".pages/www_aetnastateflorida_com_contact-us_php--87ca51f8/blocks/12ef1d0018f4.jpg",
+          ".pages/www_aetnastateflorida_com_extras_php--daeb96e5/blocks/a8ecb3051e0c.jpg",
+          ".pages/www_aetnastateflorida_com_healthinvestor-hmo_php--5875cc39/blocks/e25b4256b52e.jpg",
+          ".pages/www_aetnastateflorida_com_hmo_php--02b59065/blocks/3bfe9cfab311.jpg",
+          ".pages/www_aetnastateflorida_com_tools_php--ae2345d4/blocks/0ba84e16b563.jpg",
+          ".pages/www_aetnastateflorida_com_well-being-library_php--8858dc9c/blocks/85a57dc05ff8.jpg"
+        ]
+      },
+      "v_151f180d2453": {
+        "id": "v_151f180d2453",
+        "name": "contact-callout",
+        "type": "custom",
+        "canonicalModel": "standalone",
+        "pagesFound": 2,
+        "placedBy": "naming",
+        "confidenceLevel": "low",
+        "confidenceReason": "coloured contact box with icon, heading and phone lines that shares its section; no library block fits, and it is close to plain text in a styled section",
+        "description": "image + heading",
+        "screenshots": [
+          ".pages/www_aetnastateflorida_com--9e04b7f9/blocks/abde1e72d956.jpg",
+          ".pages/www_aetnastateflorida_com_index_php--189aa375/blocks/abde1e72d956.jpg"
+        ]
+      },
+      "v_7acfab28c43d": {
+        "id": "v_7acfab28c43d",
+        "name": "contact-callout",
+        "type": "custom",
+        "canonicalModel": "standalone",
+        "pagesFound": 2,
+        "placedBy": "naming",
+        "confidenceLevel": "low",
+        "confidenceReason": "a sidebar list of PDF download links has a different job from the phone contact callout",
+        "variant": "downloads",
+        "description": "heading + text + link",
+        "screenshots": [
+          ".pages/www_aetnastateflorida_com_healthinvestor-hmo_php--5875cc39/blocks/562532eff4cc.jpg",
+          ".pages/www_aetnastateflorida_com_hmo_php--02b59065/blocks/562532eff4cc.jpg"
+        ]
+      },
+      "v_2f31585d832f": {
+        "id": "v_2f31585d832f",
+        "name": "cards",
+        "type": "cards",
+        "canonicalModel": "standalone",
+        "pagesFound": 2,
+        "placedBy": "naming",
+        "confidenceLevel": "low",
+        "confidenceReason": "look-alike icon + link title + description items; a fixed set of three could also be columns",
+        "description": "link + image + heading + text",
+        "screenshots": [
+          ".pages/www_aetnastateflorida_com--9e04b7f9/blocks/c1d083f36fbb.jpg",
+          ".pages/www_aetnastateflorida_com_index_php--189aa375/blocks/c1d083f36fbb.jpg"
+        ]
+      },
+      "v_fc30339e13b3": {
+        "id": "v_fc30339e13b3",
+        "name": "accordion-programs",
+        "type": "accordion",
+        "canonicalModel": "standalone",
+        "pagesFound": 2,
+        "placedBy": "naming",
+        "confidenceLevel": "high",
+        "confidenceReason": "expandable rows with plus icons and titles revealing program details",
+        "description": "button",
+        "screenshots": [
+          ".pages/www_aetnastateflorida_com_extras_php--daeb96e5/blocks/f4c80cd00da1.jpg",
+          ".pages/www_aetnastateflorida_com_tools_php--ae2345d4/blocks/4c03eef2bf11.jpg"
+        ]
+      }
+    }
+  }
+}

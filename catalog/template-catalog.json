@@ -1,0 +1,42 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.aetnastateflorida.com/",
+        "https://www.aetnastateflorida.com/index.php"
+      ],
+      "description": "Landing page with rotating photo carousel, row of three icon links, centered intro text with a PDF button and a purple contact callout band"
+    },
+    {
+      "name": "two-column-page",
+      "urls": [
+        "https://www.aetnastateflorida.com/contact-us.php"
+      ],
+      "description": "Inner page with photo hero and tagline bar followed by a two-thirds / one-third split content area"
+    },
+    {
+      "name": "content-page",
+      "urls": [
+        "https://www.aetnastateflorida.com/extras.php",
+        "https://www.aetnastateflorida.com/well-being-library.php"
+      ],
+      "description": "Inner page with full-width photo hero and grey tagline bar, followed by a single centered column of headings, text and links"
+    },
+    {
+      "name": "detail-with-sidebar",
+      "urls": [
+        "https://www.aetnastateflorida.com/healthinvestor-hmo.php",
+        "https://www.aetnastateflorida.com/hmo.php"
+      ],
+      "description": "Inner page with photo hero and tagline bar, main text column beside a grey downloads sidebar, stacked text sections, a highlighted summary panel and a purple callout band"
+    },
+    {
+      "name": "accordion-page",
+      "urls": [
+        "https://www.aetnastateflorida.com/tools.php"
+      ],
+      "description": "Inner page with photo hero and tagline bar, short intro heading and text, then a list of expandable accordion rows"
+    }
+  ]
+}

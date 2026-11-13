@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 2,
+  "url": "https://www.aetnastateflorida.com/tools.php",
+  "title": "Aetna State of Florida - Member tools",
+  "timestamp": "2026-11-13T10:47:22.797Z",
+  "duration": "9.2s",
+  "cleanup": {
+    "elementsRemoved": 2,
+    "types": [
+      "announcement-bar"
+    ],
+    "cookieConsentDismissed": false,
+    "lateConsentOverlaysRemoved": 0,
+    "removed": [
+      {
+        "selector": "html.js.flexbox > body:nth-child(2) > div:nth-child(9) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)",
+        "type": "announcement-bar",
+        "rule": "[class*=\"alert-bar\"]"
+      },
+      {
+        "selector": "a.button.alert-bar-button",
+        "type": "announcement-bar",
+        "rule": "[class*=\"alert-bar\"]"
+      }
+    ]
+  },
+  "snapshot": {
+    "html": "page.html",
+    "unresolvedSelectors": []
+  },
+  "images": [
+    {
+      "url": "https://www.aetnastateflorida.com/img/aetna-logo.svg",
+      "type": "img"
+    },
+    {
+      "url": "https://www.aetnastateflorida.com/img/social-facebook.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.aetnastateflorida.com/img/social-twitter.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.aetnastateflorida.com/img/social-youtube.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.aetnastateflorida.com/img/social-linkedin.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.aetnastateflorida.com/img/footer/aetna-language-icon.png",
+      "type": "img"
+    },
+    {
+      "url": "https://www.aetnastateflorida.com/img/feature-tools.jpg",
+      "type": "background"
+    }
+  ],
+  "skeleton": {
+    "signature": "sB(s,sB,sB,s,s)",
+    "nodeMap": {
+      "r": "body",
+      "rc1": "#main",
+      "rc2": "body > div.grid-x.align-spaced.align-middle.subpage-feature__tools",
+      "rc3": "body > div.textbar-grey",
+      "rc4": "body > div.grid-container.grid-container-padded:nth-of-type(4)",
+      "rc5": "body > div.grid-container.grid-container-padded:nth-of-type(5)"
+    },
+    "sections": [
+      {
+        "id": "rc1",
+        "selector": "#main",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#fefefe",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc2",
+        "selector": "body > div.grid-x.align-spaced.align-middle.subpage-feature__tools",
+        "layout": null,
+        "hasBg": true,
+        "hint": "default-content",
+        "background": "#000000",
+        "backgroundImage": "url",
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc3",
+        "selector": "body > div.textbar-grey",
+        "layout": null,
+        "hasBg": true,
+        "hint": "default-content",
+        "background": "#cccccc",
+        "backgroundImage": null,
+        "colored": true,
+        "paintSelector": "body > div.textbar-grey"
+      },
+      {
+        "id": "rc4",
+        "selector": "body > div.grid-container.grid-container-padded:nth-of-type(4)",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#fefefe",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc5",
+        "selector": "body > div.grid-container.grid-container-padded:nth-of-type(5)",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#fefefe",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      }
+    ],
+    "invalidIgnore": []
+  },
+  "pageLayout": {
+    "box": {
+      "y": 120.90625,
+      "height": 450
+    },
+    "splits": [],
+    "start": {
+      "kind": "heading",
+      "look": {
+        "font": "DomaineDisplayWeb-Bold, sans-serif",
+        "color": "rgb(255, 255, 255)",
+        "align": "center"
+      }
+    }
+  },
+  "blocks": [
+    {
+      "id": "0ba84e16b563",
+      "type": "unknown",
+      "detectionTier": 2,
+      "selector": "body > div.grid-x.align-spaced.align-middle.subpage-feature__tools",
+      "bounds": {
+        "x": 0,
+        "y": 121,
+        "width": 1440,
+        "height": 450
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "large",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "grid-x",
+      "features": {
+        "skeleton": "~@(T)",
+        "variant": "~@(Tw)",
+        "variantClean": "~@(Tw)"
+      },
+      "screenshot": "blocks/0ba84e16b563.jpg",
+      "html": "blocks/0ba84e16b563.html",
+      "variantId": "v_e6d72508518a"
+    },
+    {
+      "id": "e7a501c521a5",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "body > div.textbar-grey",
+      "bounds": {
+        "x": 0,
+        "y": 571,
+        "width": 1440,
+        "height": 74
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": ""
+      },
+      "description": "textbar-grey",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tk",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/e7a501c521a5.html"
+    },
+    {
+      "id": "76d405a92aee",
+      "type": "default-content",
+      "detectionTier": 1,
+      "selector": "body > div:nth-child(8)",
+      "bounds": {
+        "x": 158,
+        "y": 690,
+        "width": 1125,
+        "height": 78
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading + text"
+      },
+      "description": "grid-container",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tkp",
+        "variantClean": "Tk"
+      },
+      "screenshot": null,
+      "html": "blocks/76d405a92aee.html"
+    },
+    {
+      "id": "4c03eef2bf11",
+      "type": "unknown",
+      "detectionTier": 1,
+      "selector": "body > div:nth-child(9)",
+      "bounds": {
+        "x": 158,
+        "y": 768,
+        "width": 1125,
+        "height": 231
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button"
+      },
+      "description": "grid-container",
+      "features": {
+        "skeleton": "button",
+        "variant": "button",
+        "variantClean": "button"
+      },
+      "screenshot": "blocks/4c03eef2bf11.jpg",
+      "html": "blocks/4c03eef2bf11.html",
+      "variantId": "v_fc30339e13b3"
+    }
+  ]
+}

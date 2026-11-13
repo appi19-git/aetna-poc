@@ -1,0 +1,10 @@
+{
+  "type": "da",
+  "sites": {
+    "aetna-poc": {
+      "previewOrg": "appi19-git",
+      "previewSite": "aetna-poc",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

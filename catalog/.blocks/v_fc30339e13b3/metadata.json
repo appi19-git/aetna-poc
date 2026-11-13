@@ -1,0 +1,46 @@
+{
+  "id": "v_fc30339e13b3",
+  "type": "accordion",
+  "canonicalModel": "standalone",
+  "version": "1.0.0",
+  "created": "2026-11-13T10:47:39.923Z",
+  "sourceContext": {
+    "originUrl": "https://www.aetnastateflorida.com/extras.php",
+    "discoveredDuring": "site-scope-analysis"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "button"
+  },
+  "layoutKey": "button",
+  "colour": "button",
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.aetnastateflorida.com/extras.php",
+        "instanceId": "f4c80cd00da1",
+        "instanceIds": [
+          "f4c80cd00da1"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_extras_php--daeb96e5/blocks/f4c80cd00da1.jpg"
+      },
+      {
+        "url": "https://www.aetnastateflorida.com/tools.php",
+        "instanceId": "4c03eef2bf11",
+        "instanceIds": [
+          "4c03eef2bf11"
+        ],
+        "screenshot": ".pages/www_aetnastateflorida_com_tools_php--ae2345d4/blocks/4c03eef2bf11.jpg"
+      }
+    ],
+    "reuseCount": 2
+  },
+  "naming": {
+    "confidence": "high",
+    "reason": "expandable rows with plus icons and titles revealing program details",
+    "mergedInto": null
+  }
+}

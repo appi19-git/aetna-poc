@@ -1,0 +1,250 @@
+/* stylelint-disable no-descending-specificity -- consolidated variant file */
+
+/* Columns block — base + variants (columns-about, columns-promo, columns-pullquote, columns-divider) */
+
+/* ===== Base columns ===== */
+.columns > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns img {
+  width: 100%;
+}
+
+.columns > div > div {
+  order: 1;
+}
+
+.columns > div > .columns-img-col {
+  order: 0;
+}
+
+.columns > div > .columns-img-col img {
+  display: block;
+}
+
+@media (width >= 768px) {
+  .columns > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: var(--gap-lg);
+  }
+
+  .columns > div > div {
+    flex: 1;
+    order: unset;
+  }
+}
+
+/* ===== Columns About variant ===== */
+.columns.columns-about > div {
+  gap: var(--gap-lg);
+}
+
+.columns.columns-about .columns-text-col h2 {
+  margin-bottom: var(--gap-xs);
+}
+
+.columns.columns-about .columns-text-col p {
+  color: var(--text-color-muted);
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+}
+
+/* Image column: rounded with constrained aspect ratio matching the original */
+.columns.columns-about .columns-img-col img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--card-border-radius);
+  display: block;
+}
+
+@media (width >= 768px) {
+  .columns.columns-about > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-3xl);
+    align-items: start;
+  }
+
+  .columns.columns-about > div > div {
+    order: unset;
+  }
+}
+
+/* ===== Columns Promo variant ===== */
+
+/* narrow container override via :has() */
+.columns-wrapper:has(.columns-promo) {
+  max-width: var(--container-narrow-max-width);
+}
+
+/* row = grid of promo cards */
+.columns.columns-promo > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-lg);
+}
+
+/* each cell = promo card */
+.columns.columns-promo > div > div {
+  padding: var(--gap-lg);
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--card-border-radius);
+  transition: var(--card-hover-transition);
+}
+
+.columns.columns-promo > div > div:hover {
+  background-color: var(--cream-color);
+  border-color: var(--border-color);
+  box-shadow: var(--card-hover-shadow);
+}
+
+/* eyebrow — em wrapper */
+.columns.columns-promo em {
+  display: inline-block;
+  font-style: normal;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: var(--accent-color);
+}
+
+.columns.columns-promo h3 {
+  margin-bottom: var(--gap-xs);
+}
+
+.columns.columns-promo p {
+  color: var(--text-color-muted);
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+}
+
+/* ghost button link */
+.columns.columns-promo a:any-link {
+  display: inline-block;
+  font-family: var(--button-font-family);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  letter-spacing: var(--button-letter-spacing);
+  text-decoration: none;
+  padding: var(--button-padding);
+  background-color: transparent;
+  color: var(--dark-color);
+  border: 2px solid var(--dark-color);
+  border-radius: var(--button-border-radius);
+  box-shadow: 3px 3px 0 var(--accent-color);
+  transition: var(--button-transition);
+}
+
+.columns.columns-promo a:any-link:hover {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 var(--accent-color);
+}
+
+.columns.columns-promo a:any-link:active {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+  transform: translateY(0);
+  box-shadow: 0 0 0 var(--accent-color);
+}
+
+.columns.columns-promo img {
+  display: none;
+}
+
+@media (width >= 768px) {
+  .columns.columns-promo > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Columns Pullquote variant ===== */
+.columns.columns-pullquote > div {
+  gap: var(--gap-lg);
+}
+
+/* gear list column */
+.columns.columns-pullquote > div > div:first-child h3 {
+  margin-bottom: var(--gap-md);
+}
+
+.columns.columns-pullquote > div > div:first-child ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.columns.columns-pullquote > div > div:first-child li {
+  padding: var(--gap-xs) 0;
+  border-bottom: 1px solid var(--border-color-light);
+  font-weight: 500;
+}
+
+/* pull quote column */
+.columns.columns-pullquote > div > div:last-child {
+  background-color: var(--dark-color);
+  border-radius: var(--card-border-radius);
+  padding: var(--gap-xl);
+  color: var(--background-color);
+}
+
+.columns.columns-pullquote > div > div:last-child blockquote,
+.columns.columns-pullquote > div > div:last-child p {
+  color: var(--background-color);
+  font-size: var(--heading-font-size-m);
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0 0 var(--gap-md);
+}
+
+.columns.columns-pullquote > div > div:last-child em {
+  font-style: normal;
+  color: var(--text-color-muted);
+  font-size: var(--body-font-size-s);
+}
+
+@media (width >= 768px) {
+  .columns.columns-pullquote > div {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--gap-lg);
+    align-items: start;
+  }
+}
+
+/* ===== Columns Divider variant (two text columns, vertical rule between) ===== */
+
+/* stay stacked until the divider layout kicks in */
+.columns.columns-divider > div {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--gap-xl);
+}
+
+@media (width >= 900px) {
+  .columns.columns-divider > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  .columns.columns-divider > div > div {
+    order: unset;
+    padding-right: var(--gap-2xl);
+  }
+
+  /* divider line — only shown side by side */
+  .columns.columns-divider .columns-text-col + .columns-text-col {
+    border-left: 1px solid var(--dark-color);
+    padding-right: 0;
+    padding-left: var(--gap-2xl);
+  }
+}
