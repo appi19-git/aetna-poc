@@ -1,0 +1,111 @@
+/* Accordion Programs — structural styles: thin dividers, "+" toggle, expandable body */
+
+.accordion-programs {
+  max-width: 100%;
+}
+
+.accordion-programs details.accordion-programs-item {
+  border-bottom: 1px solid var(--accordion-programs-divider, #dadada);
+}
+
+.accordion-programs details.accordion-programs-item summary {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 8px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion-programs details.accordion-programs-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-programs details.accordion-programs-item summary:focus-visible {
+  outline: 2px solid currentcolor;
+  outline-offset: 2px;
+}
+
+.accordion-programs .accordion-programs-item-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* "+" toggle drawn with two bars; the vertical bar collapses when open */
+.accordion-programs .accordion-programs-item-icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  margin-top: 0.3em;
+}
+
+.accordion-programs .accordion-programs-item-icon::before,
+.accordion-programs .accordion-programs-item-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: currentcolor;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s;
+}
+
+.accordion-programs .accordion-programs-item-icon::before {
+  width: 14px;
+  height: 2px;
+}
+
+.accordion-programs .accordion-programs-item-icon::after {
+  width: 2px;
+  height: 14px;
+}
+
+.accordion-programs details[open] .accordion-programs-item-icon::after {
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+.accordion-programs .accordion-programs-item-body {
+  padding: 0 8px 16px 34px;
+}
+
+.accordion-programs .accordion-programs-item-body > :first-child {
+  margin-top: 0;
+}
+
+.accordion-programs .accordion-programs-item-body > :last-child {
+  margin-bottom: 0;
+}
+
+.accordion-programs .accordion-programs-item-body ul {
+  padding-left: 1.25em;
+}
+
+.accordion-programs .accordion-programs-item-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (width >= 600px) {
+  .accordion-programs details.accordion-programs-item summary {
+    padding: 10px 12px;
+  }
+
+  .accordion-programs .accordion-programs-item-body {
+    padding: 0 12px 20px 38px;
+  }
+}
+
+@media (width >= 900px) {
+  .accordion-programs {
+    max-width: 640px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-programs .accordion-programs-item-icon::before,
+  .accordion-programs .accordion-programs-item-icon::after {
+    transition: none;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variantName": "contact-callout",
+  "baseBlock": "custom",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Base: purple full-width band, centered white content — a round ~72px icon (e.g. phone) above a heading/bold contact line (\"Got a Question? Call 1-877-858-6507\"), a text line (TDD phone) and an optional button (e.g. \"Find a PCP or doctor in the network\" / \"Visit DocFind »\"). Option downloads: grey rounded sidebar box, left-aligned, with a purple \"Downloads\" heading preceded by a download icon, bold year subheadings and lists of inline underlined PDF links followed by \"(PDF) »\".",
+  "contentPattern": "Free-form rows/cells. A cell holding only an image or icon becomes the icon (base only); everything else is content: heading, paragraphs and an optional link styled as a button. For downloads: a \"Downloads\" heading, then year subheadings (headings or bold paragraphs) each followed by paragraphs or lists of PDF links; links stay inline, never buttons.",
+  "options": [
+    {
+      "class": "downloads",
+      "label": "Downloads"
+    }
+  ],
+  "memberVariantIds": [
+    "v_151f180d2453",
+    "v_7acfab28c43d"
+  ],
+  "usage": "Base: contact or find-a-doctor call-to-action band near the end of the homepage and plan pages. downloads: right-sidebar list of plan PDF documents on plan detail pages (HMO, HealthInvestor HMO).",
+  "reuseGuidance": "Use the base for any coloured icon + heading + text (+ button) callout band; use downloads for a boxed list of document links. Do not use for plain text that a styled section could carry."
+}

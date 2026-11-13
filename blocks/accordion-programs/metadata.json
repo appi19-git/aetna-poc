@@ -1,0 +1,13 @@
+{
+  "variantName": "accordion-programs",
+  "baseBlock": "accordion",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Light, minimal stacked list of expandable rows separated by thin grey divider lines. Each row has a purple \"+\" toggle at the left followed by the program title; opening a row reveals its details (text, links, PDF link lists) indented under the title and turns the + into a minus.",
+  "contentPattern": "One row per item: cell 1 is the title (plain text, may include superscripts such as ®), cell 2 is the body (paragraphs, links, lists of PDF links). A single-cell row uses its first element as the title. A body holding only a link to a /fragments/ page is replaced by that fragment (e.g. a panel containing other blocks). The toggle icon is generated, never authored.",
+  "options": [],
+  "memberVariantIds": [
+    "v_fc30339e13b3"
+  ],
+  "usage": "Program and resource lists on benefits pages (e.g. Aetna extras, tools): each program title expands to show its description and downloads.",
+  "reuseGuidance": "Use for any list of expandable title/detail rows. Built on details/summary so it is keyboard accessible; keep two cells per row."
+}
