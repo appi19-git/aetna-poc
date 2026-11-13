@@ -469,3 +469,20 @@ main .hero a.button.secondary:any-link:hover {
     padding: 88px var(--gap-xl, 32px);
   }
 }
+
+/* ===== No-image fallback (set by hero.js when the first row has no picture) ===== */
+
+/* base hero only — the option classes keep their own colour treatment */
+.hero.no-image:not(.article, .hero-card, .hero-callout) {
+  color: var(--text-color);
+}
+
+.hero.no-image:not(.article, .hero-card, .hero-callout)::after {
+  content: none;
+}
+
+.hero.no-image:not(.article, .hero-card, .hero-callout) h1,
+.hero.no-image:not(.article, .hero-card, .hero-callout) p {
+  color: var(--text-color);
+  text-shadow: none;
+}

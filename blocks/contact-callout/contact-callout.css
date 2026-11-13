@@ -1,0 +1,163 @@
+/* Contact Callout — structural styles. Brand colours are tokens for the design pass. */
+
+/* ===== Base: full-width band (icon, heading, text, button) ===== */
+
+main > .section.contact-callout-container:has(> .contact-callout-wrapper:only-child > .contact-callout:not(.downloads)) {
+  padding: 0;
+}
+
+.contact-callout-container .contact-callout-wrapper:has(> .contact-callout:not(.downloads)) {
+  max-width: unset;
+  padding: 0;
+}
+
+.contact-callout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 24px;
+  background-color: var(--contact-callout-background, #7d3f98);
+  color: var(--contact-callout-color, #fff);
+  text-align: center;
+}
+
+.contact-callout .contact-callout-icon {
+  line-height: 0;
+}
+
+.contact-callout .contact-callout-icon picture,
+.contact-callout .contact-callout-icon img,
+.contact-callout .contact-callout-icon .icon {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.contact-callout .contact-callout-icon p {
+  margin: 0;
+}
+
+.contact-callout .contact-callout-content {
+  max-width: 900px;
+}
+
+.contact-callout .contact-callout-content > :first-child {
+  margin-top: 0;
+}
+
+.contact-callout .contact-callout-content > :last-child {
+  margin-bottom: 0;
+}
+
+.contact-callout:not(.downloads) h1,
+.contact-callout:not(.downloads) h2,
+.contact-callout:not(.downloads) h3,
+.contact-callout:not(.downloads) h4,
+.contact-callout:not(.downloads) h5,
+.contact-callout:not(.downloads) h6,
+.contact-callout:not(.downloads) p,
+.contact-callout:not(.downloads) a:not(.button) {
+  color: inherit;
+}
+
+.contact-callout:not(.downloads) h1,
+.contact-callout:not(.downloads) h2,
+.contact-callout:not(.downloads) h3,
+.contact-callout:not(.downloads) h4,
+.contact-callout:not(.downloads) h5,
+.contact-callout:not(.downloads) h6 {
+  margin: 0 0 8px;
+}
+
+.contact-callout:not(.downloads) p {
+  margin: 0;
+}
+
+.contact-callout .contact-callout-action {
+  margin-top: 16px;
+}
+
+@media (width >= 600px) {
+  .contact-callout {
+    padding: 56px 32px;
+  }
+}
+
+@media (width >= 900px) {
+  .contact-callout {
+    padding: 88px 32px;
+  }
+}
+
+/* ===== Option: downloads — grey rounded sidebar box with PDF link lists ===== */
+
+.contact-callout.downloads {
+  display: block;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--contact-callout-downloads-background, #ececec);
+  color: var(--text-color, #000);
+  text-align: left;
+}
+
+.contact-callout.downloads .contact-callout-content {
+  max-width: none;
+}
+
+.contact-callout.downloads .contact-callout-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+/* download icon: arrow over a tray, drawn in currentcolor */
+.contact-callout.downloads .contact-callout-title::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 0.9em;
+  height: 0.9em;
+  background-color: currentcolor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17zM4 19h16v2H4z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.contact-callout.downloads .contact-callout-subheading {
+  margin: 16px 0 4px;
+}
+
+.contact-callout.downloads .contact-callout-title + .contact-callout-subheading {
+  margin-top: 0;
+}
+
+.contact-callout.downloads p {
+  margin: 0 0 4px;
+}
+
+.contact-callout.downloads ul {
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-callout.downloads li {
+  margin: 0 0 4px;
+}
+
+.contact-callout.downloads a {
+  overflow-wrap: anywhere;
+}
+
+@media (width >= 600px) {
+  .contact-callout.downloads {
+    padding: 20px;
+  }
+}
+
+@media (width >= 900px) {
+  .contact-callout.downloads {
+    padding: 24px 16px;
+  }
+}
