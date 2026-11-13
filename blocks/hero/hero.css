@@ -209,6 +209,93 @@ main .hero a.button.secondary:any-link:hover {
   }
 }
 
+/* ===== Base hero: inner-page photo title band (source .subpage-feature) =====
+ * Applies only when no option class is set. Full-bleed cover photo, 450px tall,
+ * centered white display-serif H1 with an optional sans H2 subtitle.
+ */
+.hero:not(.article, .hero-card, .hero-callout) {
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 450px;
+  padding: 90px 0;
+  background-color: rgb(0 0 0);
+  color: var(--text-color);
+}
+
+/* no gradient overlay on the source band */
+.hero:not(.article, .hero-card, .hero-callout)::after {
+  content: none;
+}
+
+/* rows/cells stay static so the picture covers the whole block */
+.hero:not(.article, .hero-card, .hero-callout) > div,
+.hero:not(.article, .hero-card, .hero-callout) > div > div {
+  position: static;
+}
+
+/* text column: Foundation cell small-11 / medium-8, centered */
+.hero:not(.article, .hero-card, .hero-callout) > div {
+  width: 91.6667%;
+  max-width: none;
+  margin: 0;
+  text-align: center;
+}
+
+.hero:not(.article, .hero-card, .hero-callout) picture {
+  z-index: 0;
+  inset: 0;
+}
+
+.hero:not(.article, .hero-card, .hero-callout) img {
+  object-position: 50% 50%;
+}
+
+.hero:not(.article, .hero-card, .hero-callout) h1 {
+  position: relative;
+  z-index: 1;
+  max-width: none;
+  margin: 0 0 7.5px;
+  font-family: var(--display-font-family);
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: normal;
+  color: var(--text-on-dark);
+  text-shadow: 0 0 20px rgb(0 0 0 / 50%);
+}
+
+/* subtitle, e.g. "Aetna Select℠ (Open Access)" (source .subpage-h2) */
+.hero:not(.article, .hero-card, .hero-callout) h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0.7em 0 7.5px;
+  font-family: var(--body-font-family);
+  font-size: 25.5px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: normal;
+  color: var(--text-on-dark);
+  text-shadow: 0 0 15px rgb(0 0 0 / 70%);
+}
+
+.hero:not(.article, .hero-card, .hero-callout) p:not(.tag-pill) {
+  position: relative;
+  z-index: 1;
+  max-width: none;
+}
+
+@media (width >= 600px) {
+  .hero:not(.article, .hero-card, .hero-callout) > div {
+    width: 66.6667%;
+  }
+
+  .hero:not(.article, .hero-card, .hero-callout) h1 {
+    font-size: 49.5px;
+  }
+}
+
 /* ===== Hero Article variant ===== */
 .hero.article {
   min-height: min(55vh, 380px);
@@ -474,6 +561,7 @@ main .hero a.button.secondary:any-link:hover {
 
 /* base hero only — the option classes keep their own colour treatment */
 .hero.no-image:not(.article, .hero-card, .hero-callout) {
+  background-color: transparent;
   color: var(--text-color);
 }
 
@@ -482,6 +570,7 @@ main .hero a.button.secondary:any-link:hover {
 }
 
 .hero.no-image:not(.article, .hero-card, .hero-callout) h1,
+.hero.no-image:not(.article, .hero-card, .hero-callout) h2,
 .hero.no-image:not(.article, .hero-card, .hero-callout) p {
   color: var(--text-color);
   text-shadow: none;

@@ -6,12 +6,16 @@ const { createOptimizedPicture } = aem;
 async function loadPlaceholders() {
   try {
     return typeof aem.fetchPlaceholders === 'function' ? await aem.fetchPlaceholders() : {};
-  } catch (e) {
+  } catch {
     return {};
   }
 }
 
-const AUTOPLAY_INTERVAL = 6000;
+// source (slick): autoplaySpeed 15000, infinite: false
+const AUTOPLAY_INTERVAL = 15000;
+
+// carousel-hero does not wrap around: it stops at either end (source slick infinite: false)
+const isLooping = (block) => !block.classList.contains('carousel-hero');
 
 function updateActiveSlide(slide) {
   const block = slide.closest('.carousel');
@@ -42,12 +46,29 @@ function updateActiveSlide(slide) {
       button.setAttribute('aria-current', true);
     }
   });
+
+  if (!isLooping(block)) {
+    const prev = block.querySelector('.slide-prev');
+    const next = block.querySelector('.slide-next');
+    [[prev, slideIndex === 0, next], [next, slideIndex === slides.length - 1, prev]]
+      .forEach(([button, atEnd, other]) => {
+        if (!button) return;
+        button.setAttribute('aria-disabled', atEnd);
+        // the disabled arrow is hidden; keep keyboard focus on the opposite arrow
+        if (atEnd && document.activeElement === button && other) other.focus();
+      });
+  }
 }
 
 export function showSlide(block, slideIndex = 0) {
   const slides = block.querySelectorAll('.carousel-slide');
-  let realSlideIndex = slideIndex < 0 ? slides.length - 1 : slideIndex;
-  if (slideIndex >= slides.length) realSlideIndex = 0;
+  let realSlideIndex;
+  if (isLooping(block)) {
+    realSlideIndex = slideIndex < 0 ? slides.length - 1 : slideIndex;
+    if (slideIndex >= slides.length) realSlideIndex = 0;
+  } else {
+    realSlideIndex = Math.min(Math.max(slideIndex, 0), slides.length - 1);
+  }
   const activeSlide = slides[realSlideIndex];
 
   activeSlide.querySelectorAll('a').forEach((link) => link.removeAttribute('tabindex'));
@@ -83,7 +104,8 @@ function setupAutoplay(block, placeholders) {
   const render = () => {
     toggle.classList.toggle('is-paused', userPaused);
     toggle.setAttribute('aria-label', `${userPaused ? playLabel : pauseLabel} ${placeholders.slideshow || 'slideshow'}`);
-    toggleText.textContent = userPaused ? playLabel.toUpperCase() : pauseLabel.toUpperCase();
+    // icon-only control (source pause/play image); the text stays for assistive tech
+    toggleText.textContent = userPaused ? playLabel : pauseLabel;
   };
 
   const stop = () => {
@@ -91,11 +113,18 @@ function setupAutoplay(block, placeholders) {
     timer = undefined;
   };
 
+  const slideCount = block.querySelectorAll('.carousel-slide').length;
+  const currentIndex = () => parseInt(block.dataset.activeSlide || '0', 10);
+
   const start = () => {
     stop();
     if (userPaused || hovering || focused) return;
+    if (currentIndex() >= slideCount - 1) return;
     timer = setInterval(() => {
-      showSlide(block, parseInt(block.dataset.activeSlide || '0', 10) + 1);
+      const nextIndex = currentIndex() + 1;
+      // no loop: autoplay ends on the last slide
+      if (nextIndex >= slideCount - 1) stop();
+      if (nextIndex <= slideCount - 1) showSlide(block, nextIndex);
     }, AUTOPLAY_INTERVAL);
   };
 

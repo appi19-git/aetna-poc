@@ -2,22 +2,25 @@
 /* global WebImporter */
 
 /**
- * Transformer: Aetna State of Florida sections.
- * Uses payload.template.sections (rc2, rc4, rc5 "centered", rc6 "purple").
+ * Transformer: Aetna State of Florida sections (shared by all templates).
+ * Reads payload.template.sections ({ id, selector: string[], style }); selectors
+ * tried in order. In catalog mode the import script rewrites matched selectors to
+ * [data-excat-section="i"] before this runs.
  *
- * beforeTransform: walk sections in reverse, insert <hr> before every non-first
- *   section while parser targets still exist; mark styled sections and their
- *   <hr> with a temporary data-excat-section-id. A styled first section gets a
- *   temporary marked <hr> that is removed in afterTransform.
- * afterTransform: walk reverse, insert Section Metadata after the surviving
- *   section element (or before the next section break if the parser replaced
- *   it), remove markers and the first section's temporary <hr>.
+ * beforeTransform (late: runs after block discovery, before parsers): walk sections
+ *   in reverse, insert <hr> before every non-first section; styled sections get a
+ *   temporary data-excat-section-id on both the element and its <hr>. A styled
+ *   first section gets a temporary marked <hr> (removed in afterTransform).
+ * afterTransform: walk reverse, insert Section Metadata (style) after the surviving
+ *   section element, or - when a block parser replaced it - at the end of the
+ *   section (just before the next <hr>), then drop markers and the temporary <hr>.
  */
 const MARKER = 'data-excat-section-id';
 const FIRST = 'data-excat-first';
 
 function findSectionElement(root, section) {
-  const selectors = Array.isArray(section.selector) ? section.selector : [section.selector];
+  const raw = section.selector;
+  const selectors = Array.isArray(raw) ? raw : [raw];
   for (const sel of selectors) {
     if (!sel) continue;
     try {
@@ -26,6 +29,22 @@ function findSectionElement(root, section) {
     } catch (e) {
       // unsupported selector in this DOM implementation; try next
     }
+  }
+  return null;
+}
+
+function nextBreakAfter(node) {
+  // Walk forward in document order (siblings, then ancestors' siblings) to the next <hr>
+  let cur = node;
+  while (cur) {
+    let sib = cur.nextElementSibling;
+    while (sib) {
+      if (sib.tagName === 'HR') return sib;
+      const inner = sib.querySelector && sib.querySelector('hr');
+      if (inner) return inner;
+      sib = sib.nextElementSibling;
+    }
+    cur = cur.parentElement;
   }
   return null;
 }
@@ -68,13 +87,11 @@ export default function transform(hookName, element, payload) {
 
       if (sectionEl) {
         sectionEl.after(meta);
-        sectionEl.removeAttribute(MARKER);
       } else {
-        // Section element replaced by a parser: place metadata at end of this section
-        let next = hr.nextElementSibling;
-        while (next && next.tagName !== 'HR') next = next.nextElementSibling;
+        // Section element replaced by its block parser: metadata closes this section
+        const next = nextBreakAfter(hr);
         if (next) next.before(meta);
-        else hr.parentElement.append(meta);
+        else element.append(meta);
       }
 
       if (hr) {

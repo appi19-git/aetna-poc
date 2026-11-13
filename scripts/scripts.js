@@ -181,6 +181,22 @@ function decorateButtonVariants(main) {
  * Decorates the main element.
  * @param {Element} main The main element
  */
+/**
+ * Opens links to other sites and file downloads (PDFs) in a new tab, as the source site does.
+ * @param {Element} main The main element
+ */
+function decorateExternalLinks(main) {
+  main.querySelectorAll('a[href]').forEach((a) => {
+    try {
+      const url = new URL(a.href, window.location.href);
+      if (url.origin !== window.location.origin || /\.pdf$/i.test(url.pathname)) {
+        a.target = '_blank';
+        a.rel = 'noopener';
+      }
+    } catch { /* ignore malformed hrefs */ }
+  });
+}
+
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
   decorateIcons(main);
@@ -189,6 +205,7 @@ export function decorateMain(main) {
   decorateBlocks(main);
   decorateButtons(main);
   decorateButtonVariants(main);
+  decorateExternalLinks(main);
 
   // Tag pills: first <p> in dark/accent sections (eyebrow labels)
   main.querySelectorAll(':scope > .section.dark > div > p:first-child, :scope > .section.accent > div > p:first-child').forEach((p) => {

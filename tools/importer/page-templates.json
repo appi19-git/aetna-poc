@@ -1,7 +1,4 @@
 {
-  "metadata": {
-    "projectType": "da"
-  },
   "templates": [
     {
       "name": "homepage",
@@ -12,52 +9,76 @@
       "description": "Landing page with rotating photo carousel, row of three icon links, centered intro text with a PDF button and a purple contact callout band",
       "blocks": [
         {
-          "name": "carousel-hero",
+          "name": "carousel",
           "instances": [
-            "div.masthead-container section.masthead"
-          ]
+            "div.masthead-container > section.masthead"
+          ],
+          "pageInstances": {
+            "https://www.aetnastateflorida.com/": [
+              "body > div.masthead-container > section > div"
+            ],
+            "https://www.aetnastateflorida.com/index.php": [
+              "body > div.masthead-container > section > div"
+            ]
+          }
         },
         {
-          "name": "cards-icon-link",
+          "name": "cards",
           "instances": [
             "div.homepage-threeiconlinks"
-          ]
+          ],
+          "pageInstances": {
+            "https://www.aetnastateflorida.com/": [
+              "body > section:nth-child(6)"
+            ],
+            "https://www.aetnastateflorida.com/index.php": [
+              "body > section:nth-child(6)"
+            ]
+          }
         },
         {
-          "name": "hero-callout",
+          "name": "contact-callout",
           "instances": [
             "div.textbar-callout-purple"
-          ]
+          ],
+          "pageInstances": {
+            "https://www.aetnastateflorida.com/": [
+              "body > div.grid-x.align-middle.text-center.textbar-callout-purple"
+            ],
+            "https://www.aetnastateflorida.com/index.php": [
+              "body > div.grid-x.align-middle.text-center.textbar-callout-purple"
+            ]
+          }
         }
       ],
+      "representativeUrl": "https://www.aetnastateflorida.com/",
       "sections": [
         {
-          "id": "rc2",
-          "name": "Hero carousel (masthead)",
+          "id": "home-carousel",
+          "name": "Hero carousel",
           "selector": [
             "div.masthead-container"
           ],
           "style": null,
           "blocks": [
-            "carousel-hero"
+            "carousel"
           ],
           "defaultContent": []
         },
         {
-          "id": "rc4",
+          "id": "home-icon-links",
           "name": "Three icon links",
           "selector": [
-            "section:has(> div > div.homepage-threeiconlinks)",
-            "section:has(.homepage-threeiconlinks)"
+            "section:has(div.homepage-threeiconlinks)"
           ],
           "style": null,
           "blocks": [
-            "cards-icon-link"
+            "cards"
           ],
           "defaultContent": []
         },
         {
-          "id": "rc5",
+          "id": "home-welcome",
           "name": "Welcome text and temporary ID card",
           "selector": [
             "section:has(div.content-panel)"
@@ -72,14 +93,14 @@
           ]
         },
         {
-          "id": "rc6",
-          "name": "Phone callout",
+          "id": "home-phone-callout",
+          "name": "Purple phone callout",
           "selector": [
             "div.textbar-callout-purple"
           ],
           "style": "purple",
           "blocks": [
-            "hero-callout"
+            "contact-callout"
           ],
           "defaultContent": []
         }
@@ -91,7 +112,65 @@
         "https://www.aetnastateflorida.com/contact-us.php"
       ],
       "description": "Inner page with photo hero and tagline bar followed by a two-thirds / one-third split content area",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            "div[class*=\"subpage-feature\"]"
+          ],
+          "pageInstances": {
+            "https://www.aetnastateflorida.com/contact-us.php": [
+              "body > div.grid-x.align-spaced.align-middle.subpage-feature__contactus"
+            ]
+          }
+        },
+        {
+          "name": "columns",
+          "instances": [
+            "div.content-panel:has(> .cell + .cell)"
+          ]
+        }
+      ],
+      "representativeUrl": "https://www.aetnastateflorida.com/contact-us.php",
+      "sections": [
+        {
+          "id": "subpage-hero",
+          "name": "Photo hero with page title",
+          "selector": [
+            "div[class*=\"subpage-feature\"]"
+          ],
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "tagline-bar",
+          "name": "Grey tagline bar",
+          "selector": [
+            "div.textbar-grey"
+          ],
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": [
+            "div.textbar-grey"
+          ]
+        },
+        {
+          "id": "two-column-content",
+          "name": "Main text with phone sidebar",
+          "selector": [
+            "body > div.grid-container.grid-container-padded:has(div.content-panel)",
+            "div.grid-container:has(> div.content-panel)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "content-page",
@@ -100,7 +179,71 @@
         "https://www.aetnastateflorida.com/well-being-library.php"
       ],
       "description": "Inner page with full-width photo hero and grey tagline bar, followed by a single centered column of headings, text and links",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            "div[class*=\"subpage-feature\"]"
+          ],
+          "pageInstances": {
+            "https://www.aetnastateflorida.com/extras.php": [
+              "body > div.grid-x.align-spaced.align-middle.subpage-feature__extras"
+            ],
+            "https://www.aetnastateflorida.com/well-being-library.php": [
+              "body > div.grid-x.align-spaced.align-middle.subpage-feature__wellbeing"
+            ]
+          }
+        },
+        {
+          "name": "accordion-programs",
+          "instances": [
+            "dl.pcaccordion"
+          ]
+        }
+      ],
+      "representativeUrl": "https://www.aetnastateflorida.com/extras.php",
+      "sections": [
+        {
+          "id": "subpage-hero",
+          "name": "Photo hero with page title",
+          "selector": [
+            "div[class*=\"subpage-feature\"]"
+          ],
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "tagline-bar",
+          "name": "Grey tagline bar",
+          "selector": [
+            "div.textbar-grey"
+          ],
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": [
+            "div.textbar-grey"
+          ]
+        },
+        {
+          "id": "main-content",
+          "name": "Narrow text column (intro, flyer list, program accordion)",
+          "selector": [
+            "body > div.grid-container.grid-container-padded",
+            "div.grid-container:has(> div.content-panel)"
+          ],
+          "style": "narrow",
+          "blocks": [
+            "accordion-programs"
+          ],
+          "defaultContent": [
+            "div.content-panel h3.content-panel-subhead",
+            "div.content-panel > .cell > p"
+          ]
+        }
+      ]
     },
     {
       "name": "detail-with-sidebar",
@@ -109,7 +252,117 @@
         "https://www.aetnastateflorida.com/hmo.php"
       ],
       "description": "Inner page with photo hero and tagline bar, main text column beside a grey downloads sidebar, stacked text sections, a highlighted summary panel and a purple callout band",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            "div[class*=\"subpage-feature\"]"
+          ],
+          "pageInstances": {
+            "https://www.aetnastateflorida.com/healthinvestor-hmo.php": [
+              "body > div.grid-x.align-spaced.align-middle.subpage-feature__hmo-investor"
+            ],
+            "https://www.aetnastateflorida.com/hmo.php": [
+              "body > div.grid-x.align-spaced.align-middle.subpage-feature__hmo"
+            ]
+          }
+        },
+        {
+          "name": "contact-callout",
+          "instances": [
+            "div.content-panel-quicklinks",
+            "div.textbar-callout-purple"
+          ],
+          "pageInstances": {
+            "https://www.aetnastateflorida.com/healthinvestor-hmo.php": [
+              "body > div:nth-child(8) > div > div.cell.small-11.medium-4.large-3.content-panel-quicklinks"
+            ],
+            "https://www.aetnastateflorida.com/hmo.php": [
+              "body > div:nth-child(8) > div > div.cell.small-11.medium-4.large-3.content-panel-quicklinks"
+            ]
+          }
+        }
+      ],
+      "representativeUrl": "https://www.aetnastateflorida.com/hmo.php",
+      "sections": [
+        {
+          "id": "subpage-hero",
+          "name": "Photo hero with plan title",
+          "selector": [
+            "div[class*=\"subpage-feature\"]"
+          ],
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "tagline-bar",
+          "name": "Grey tagline bar",
+          "selector": [
+            "div.textbar-grey"
+          ],
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": [
+            "div.textbar-grey"
+          ]
+        },
+        {
+          "id": "plan-intro",
+          "name": "Plan bullets beside the Downloads sidebar",
+          "selector": [
+            "div.grid-container:has(div.content-panel-quicklinks)"
+          ],
+          "style": "split",
+          "blocks": [
+            "contact-callout"
+          ],
+          "defaultContent": [
+            "div.content-panel > div.cell:first-child > h3.content-panel-subhead",
+            "div.content-panel > div.cell:first-child > ul"
+          ]
+        },
+        {
+          "id": "plan-details",
+          "name": "How the plan works text",
+          "selector": [
+            "div.grid-container:has(h3.content-panel-subhead__body)"
+          ],
+          "style": "wide-column",
+          "blocks": [],
+          "defaultContent": [
+            "div.content-panel > div.cell > h3",
+            "div.content-panel > div.cell > p"
+          ]
+        },
+        {
+          "id": "plan-highlights",
+          "name": "Plan highlights card",
+          "selector": [
+            "div.grid-container:has(div.content-panel--planhighlights)"
+          ],
+          "style": "highlights",
+          "blocks": [],
+          "defaultContent": [
+            "div.content-panel--planhighlights__tab h3",
+            "div.content-panel--planhighlights__body"
+          ]
+        },
+        {
+          "id": "doctor-callout",
+          "name": "Find a PCP purple callout",
+          "selector": [
+            "div.textbar-callout-purple"
+          ],
+          "style": "purple",
+          "blocks": [
+            "contact-callout"
+          ],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "accordion-page",
@@ -117,7 +370,71 @@
         "https://www.aetnastateflorida.com/tools.php"
       ],
       "description": "Inner page with photo hero and tagline bar, short intro heading and text, then a list of expandable accordion rows",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            "div[class*=\"subpage-feature\"]"
+          ],
+          "pageInstances": {
+            "https://www.aetnastateflorida.com/tools.php": [
+              "body > div.grid-x.align-spaced.align-middle.subpage-feature__tools"
+            ]
+          }
+        },
+        {
+          "name": "accordion-programs",
+          "instances": [
+            "dl.pcaccordion"
+          ]
+        }
+      ],
+      "representativeUrl": "https://www.aetnastateflorida.com/tools.php",
+      "sections": [
+        {
+          "id": "subpage-hero",
+          "name": "Photo hero with page title",
+          "selector": [
+            "div[class*=\"subpage-feature\"]"
+          ],
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "tagline-bar",
+          "name": "Grey tagline bar",
+          "selector": [
+            "div.textbar-grey"
+          ],
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": [
+            "div.textbar-grey"
+          ]
+        },
+        {
+          "id": "main-content",
+          "name": "Intro and tools accordion",
+          "selector": [
+            "body > div.grid-container.grid-container-padded",
+            "div.grid-container:has(> div.content-panel)"
+          ],
+          "style": "narrow",
+          "blocks": [
+            "accordion-programs"
+          ],
+          "defaultContent": [
+            "div.content-panel h3.content-panel-subhead",
+            "div.content-panel > .cell > p"
+          ]
+        }
+      ]
     }
-  ]
+  ],
+  "metadata": {
+    "projectType": "da"
+  }
 }
